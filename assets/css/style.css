@@ -80,6 +80,7 @@ header .container {
 .logo {
   display: flex;
   align-items: center;
+  height: 68px;
 }
 .logo svg {
   width: 236px;
@@ -87,7 +88,7 @@ header .container {
 }
 
 .menu {
-  width: 260px;
+  width: 310px;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -105,9 +106,51 @@ header .container {
   transition: ease-out 0.3s;
 }
 
+.overlay-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(18px);
+  transition: var(--transition);
+  visibility: hidden;
+  opacity: 0;
+  z-index: -10;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 100;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.header-nav .logo {
+  flex-grow: 1;
+  justify-content: center;
+}
+.spacer {
+  min-width: 260px;
+  margin-right: 50px;
+}
+
 @media screen and (max-width: 768px) {
   .contact {
     display: none;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .header-nav .logo {
+    justify-content: start;
   }
 }
 
