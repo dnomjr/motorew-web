@@ -1,7 +1,7 @@
 'use strict'
 
-const closeBtn = document.querySelector('.close-btn')
-const openBtn = document.querySelector('.menu')
+const openBtn = document.querySelector('.open')
+const closeBtn = document.querySelector('.close')
 const menu = document.querySelector('.overlay-nav')
 
 const toggleNav = function () {

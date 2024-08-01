@@ -15,8 +15,8 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="contact">
+        <div class="header container">
+            <div class="header__contact contact">
                 <div class="contact__icon">
                     <svg>
                         <use xlink:href="assets/icons/icons.svg#repair" />
@@ -36,30 +36,57 @@
                 </svg>
             </div>
 
-            <div class="menu open-btn">
+            <div class="menu-btn open">
                 <svg>
                     <use xlink:href="assets/icons/icons.svg#menu" />
                 </svg>
             </div>
         </div>
+
+        <div class="overlay-nav">
+            <nav class="nav container">
+                <div class="nav__header ">
+                    <div class="spacer"></div>
+                    <div class="logo">
+                        <svg>
+                            <use xlink:href="assets/icons/icons.svg#logo" />
+                        </svg>
+                    </div>
+
+                    <div class="menu-btn close">
+                        <svg>
+                            <use xlink:href="assets/icons/icons.svg#close-menu" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="nav__links ">
+                    <ul class="links">
+                        <li><a href="#about">o nás</a></li>
+                        <li><a href="#spaces">priestory</a></li>
+                        <li><a href="#reviews">recenzie</a></li>
+                        <li><a href="#address">kde nás nájdete</a></li>
+                        <li><a href="#contact">kontakt</a></li>
+                    </ul>
+
+                    <div class="nav__contact contact">
+                        <div class="contact__icon">
+                            <svg>
+                                <use xlink:href="assets/icons/icons.svg#repair" />
+                            </svg>
+                        </div>
+
+                        <div class="contact__details">
+                            <a href="tel:+421905644621">0905 644 621</a>
+                            <p>Po - Pia: 9:00 - 18:00 <br />
+                                So: Na zavolanie</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <div class="overlay-nav">
-        <div class="container header-nav">
-            <div class="spacer"></div>
-            <div class="logo">
-                <svg>
-                    <use xlink:href="assets/icons/icons.svg#logo" />
-                </svg>
-            </div>
-
-            <div class="menu close-btn">
-                <svg>
-                    <use xlink:href="assets/icons/icons.svg#close-menu" />
-                </svg>
-            </div>
-        </div>
-    </div>
 
 </body>
 

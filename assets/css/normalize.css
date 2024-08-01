@@ -33,6 +33,15 @@ body {
   scroll-behavior: smooth;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
 /**
  * Render the `main` element consistently in IE.
  */
