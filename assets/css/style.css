@@ -177,9 +177,9 @@ main {
 }
 .hero {
   display: flex;
+  overflow: visible;
 }
 .hero__cta {
-  flex-grow: 1;
   flex-basis: 50%;
 }
 .hero__cta h1 {
@@ -209,9 +209,21 @@ main {
   color: #000;
   transition: var(--transition);
 }
+
 .hero__logo {
   flex-basis: 50%;
-  flex-grow: 1;
+}
+.hero__logo img {
+  max-width: 100%;
+  height: auto;
+  transform: translateX(5vw);
+}
+.hero__cta .hero__logo-bike {
+width: 2000px;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+z-index: 10;
 }
 
 @media screen and (max-width: 768px) {
