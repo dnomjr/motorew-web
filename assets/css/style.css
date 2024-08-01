@@ -5,7 +5,7 @@
 }
 
 body {
-  /* min-height: 100vh; */
+  min-height: 100vh;
   font-family: termina, sans-serif;
   background-color: var(--bg-color);
   color: #fff;
@@ -171,6 +171,46 @@ header {
 .links a:hover {
   color: var(--primary-color);
   text-decoration: underline;
+}
+main {
+  height: 100vh;
+}
+.hero {
+  display: flex;
+}
+.hero__cta {
+  flex-grow: 1;
+  flex-basis: 50%;
+}
+.hero__cta h1 {
+  font-weight: 300;
+  font-size: clamp(28px, 16px + 4vw, 80px);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.hero__cta h1 span {
+  font-weight: 900;
+}
+.hero__cta p {
+  line-height: 2;
+  margin-bottom: 40px;
+}
+.hero__cta a {
+  display: inline-block;
+  border: 1px solid var(--primary-color);
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.hero__cta a:hover,
+.hero__cta a:active {
+  background-color: var(--primary-color);
+  color: #000;
+  transition: var(--transition);
+}
+.hero__logo {
+  flex-basis: 50%;
+  flex-grow: 1;
 }
 
 @media screen and (max-width: 768px) {
