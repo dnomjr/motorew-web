@@ -187,6 +187,7 @@ main {
   font-size: clamp(28px, 16px + 4vw, 80px);
   white-space: nowrap;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 .hero__cta h1 span {
   font-weight: 900;
