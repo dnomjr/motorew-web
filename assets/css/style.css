@@ -34,14 +34,15 @@ header .container {
 }
 
 .contact {
-  width: 260px;
+  flex-basis: 260px;
+  min-width: 260px;
+  margin-right: 50px;
   font-size: 12px;
   display: flex;
   align-items: center;
   border: 1px solid var(--primary-color);
   border-radius: 8px;
   white-space: nowrap;
-  margin-right: 50px;
 }
 .contact:hover,
 .contact:active {
@@ -88,7 +89,9 @@ header .container {
 }
 
 .menu {
-  margin-left: 280px;
+  /* margin-left: 280px; */
+  flex-basis: 260px;
+  margin-left: 50px;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -151,6 +154,10 @@ header .container {
 
   .header-nav .logo {
     justify-content: start;
+  }
+
+  .menu {
+    margin-left: 0;
   }
 }
 
