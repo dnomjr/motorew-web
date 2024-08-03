@@ -2,6 +2,9 @@
   --bg-color: #292929;
   --primary-color: #ffc100;
   --transition: ease-out 0.3s;
+  --title-section: normal normal 900 clamp(48px, 16px + 16vw, 230px) / 240px
+    Termina;
+  --title-color: #434343;
 }
 
 body {
@@ -207,6 +210,8 @@ main {
   padding: 10px 25px;
   border-radius: 5px;
   font-weight: 600;
+  position: relative;
+  z-index: 11;
 }
 .hero__cta a:hover,
 .hero__cta a:active {
@@ -232,7 +237,7 @@ main {
   mask-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0) 25%,
-    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.05) 50%,
     rgb(0, 0, 0) 70%
   );
 }
@@ -249,6 +254,30 @@ main {
   max-width: 100%;
   height: auto;
   transform: translateX(5vw);
+}
+
+.about {
+  margin-top: 280px;
+  position: relative;
+  z-index: 12;
+}
+.about h2 {
+  font: var(--title-section);
+  color: var(--title-color);
+  text-transform: uppercase;
+  text-align: center;
+}
+.about p {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  line-height: 45px;
+}
+.about img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -279,11 +308,29 @@ main {
     margin-left: 0;
   }
 
-  /*   .hero {
-    justify-content: center;
-  } */
   .hero__logo {
     display: none;
+  }
+
+  .about {
+    margin-top: 160px;
+  }
+  .about p {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about {
+    margin-top: 100px;
+  }
+  .about p {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 426px) {
+  .about {
+    margin-top: 60px;
   }
 }
 
