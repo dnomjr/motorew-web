@@ -17,10 +17,14 @@ header {
   background-color: rgba(0, 0, 0, 0.1);
   /*   backdrop-filter: blur(10px);
  */
-  /*   position: fixed;
+  /*     position: fixed;
   top: 0;
   left: 0; */
 }
+
+/* main {
+  overflow: hidden;
+} */
 
 .header {
   display: flex;
@@ -115,7 +119,7 @@ header {
   width: 100%;
   min-height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(56px);
   transition: var(--transition);
   visibility: hidden;
   opacity: 0;
@@ -174,6 +178,7 @@ header {
 }
 main {
   height: 100vh;
+  position: relative;
 }
 .hero {
   display: flex;
@@ -209,6 +214,33 @@ main {
   color: #000;
   transition: var(--transition);
 }
+.hero__cta-bike {
+  /*   -webkit-mask-image: linear-gradient(to top, transparent 5%, black 100%);
+  mask-image: linear-gradient(to top, transparent 5%, black 50%); */
+  width: 1800px;
+  max-width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -5%);
+  z-index: 10;
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0) 25%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgb(0, 0, 0) 70%
+  );
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0) 25%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgb(0, 0, 0) 70%
+  );
+}
+.hero__cta-bike img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .hero__logo {
   flex-basis: 50%;
@@ -218,13 +250,13 @@ main {
   height: auto;
   transform: translateX(5vw);
 }
-.hero__cta .hero__logo-bike {
-width: 2000px;
-position: absolute;
-left: 50%;
-transform: translateX(-50%);
-z-index: 10;
-}
+/* .hero__cta .hero__cta-bike {
+  width: 2000px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+} */
 
 @media screen and (max-width: 768px) {
   .header__contact {
