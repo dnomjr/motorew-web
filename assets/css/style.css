@@ -250,13 +250,6 @@ main {
   height: auto;
   transform: translateX(5vw);
 }
-/* .hero__cta .hero__cta-bike {
-  width: 2000px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-} */
 
 @media screen and (max-width: 768px) {
   .header__contact {
@@ -284,6 +277,13 @@ main {
 
   .menu-btn {
     margin-left: 0;
+  }
+
+  /*   .hero {
+    justify-content: center;
+  } */
+  .hero__logo {
+    display: none;
   }
 }
 
