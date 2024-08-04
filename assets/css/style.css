@@ -2,8 +2,7 @@
   --bg-color: #292929;
   --primary-color: #ffc100;
   --transition: ease-out 0.3s;
-  --title-section: normal normal 900 clamp(36px, 12vw, 230px) /
-    clamp(48px, 12vw, 240px) Termina;
+  --title-section: normal normal 900 clamp(36px, 12vw, 230px) / 1 Termina;
   --title-color: #434343;
 }
 
@@ -12,10 +11,6 @@ body {
   font-family: termina, sans-serif;
   background-color: var(--bg-color);
   color: #fff;
-}
-
-p {
-  font-size: clamp(10px, 4vw, 16px);
 }
 
 header {
@@ -207,6 +202,10 @@ main {
   line-height: 2;
   margin-bottom: 40px;
 }
+.hero__cta p,
+.about > p {
+  font-size: clamp(10px, 4vw, 16px);
+}
 .hero__cta a {
   display: inline-block;
   border: 1px solid var(--primary-color);
@@ -308,7 +307,7 @@ main {
 }
 
 .space {
-  margin-top: 12vw;
+  margin-top: 150px;
 }
 .space h2 {
   width: 95%;
@@ -316,9 +315,8 @@ main {
 }
 .space__carousel {
   max-width: 100%;
-  height: 700px;
+  min-height: 500px;
   position: relative;
-  margin-top: -35px;
   overflow: hidden;
 }
 .space__carousel img {
@@ -326,16 +324,14 @@ main {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
+  max-width: 50%;
+  height: auto;
 }
 #space1 {
-  transform: translateX(0);
-}
-#space2 {
-  z-index: 2;
+  left: 0;
 }
 #space3 {
-  transform: translateX(-100%);
+  left: 100%;
 }
 
 @media screen and (max-width: 1340px) {
@@ -402,6 +398,10 @@ main {
   .about__services svg {
     height: 200px;
   }
+
+  .space {
+    margin-top: 100px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -416,7 +416,11 @@ main {
     row-gap: 40px;
   }
   .about__services svg {
-    height: 180px;
+    height: 120px;
+  }
+
+  .space {
+    margin-top: 80px;
   }
 }
 @media screen and (max-width: 426px) {
@@ -427,7 +431,7 @@ main {
     font-size: clamp(32px, 16px + 4vw, 80px);
   }
   .about__services svg {
-    height: 140px;
+    height: 100px;
   }
   .about__services p {
     font-size: 13px;
