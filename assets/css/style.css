@@ -191,7 +191,7 @@ main {
 }
 .hero__cta h1 {
   font-weight: 300;
-  font-size: clamp(28px, 16px + 4vw, 80px);
+  font-size: clamp(44px, 16px + 4vw, 80px);
   white-space: nowrap;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -358,6 +358,9 @@ main {
   .about__services div {
     flex-basis: auto;
   }
+  .about__services svg {
+    height: 200px;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -375,6 +378,9 @@ main {
 @media screen and (max-width: 426px) {
   .about {
     margin-top: 130px;
+  }
+  .hero__cta h1 {
+    font-size: clamp(36px, 16px + 4vw, 80px);
   }
 }
 
