@@ -380,7 +380,7 @@ main {
     margin-top: 130px;
   }
   .hero__cta h1 {
-    font-size: clamp(36px, 16px + 4vw, 80px);
+    font-size: clamp(40px, 16px + 4vw, 80px);
   }
 }
 
