@@ -9,7 +9,6 @@ const showOverlay = () => menuOverlay.classList.toggle('show')
 const toggleNav = function () {
   showOverlay()
   menuIcon.classList.toggle('open')
-  document.body.classList.toggle('no-scroll')
 }
 
 const scrollSection = function (e) {

@@ -14,10 +14,6 @@ body {
   position: relative;
 }
 
-.no-scroll {
-  overflow: hidden;
-}
-
 .container {
   width: 90vw; /* width 1920px === margin 140px */
   max-width: 1640px;
