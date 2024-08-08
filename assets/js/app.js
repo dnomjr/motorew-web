@@ -1,14 +1,12 @@
 'use strict'
 
-const openBtn = document.querySelector('.menu-btn')
-/* const closeBtn = document.querySelector('.close')
- */ const menu = document.querySelector('.overlay-nav')
+const menuIcon = document.querySelector('.menu-btn')
+const menuOverlay = document.querySelector('.overlay')
 
 const toggleNav = function () {
-  menu.classList.toggle('show')
-  openBtn.classList.toggle('open')
+  menuOverlay.classList.toggle('show')
+  menuIcon.classList.toggle('open')
 }
 
-openBtn.addEventListener('click', toggleNav)
-/* closeBtn.addEventListener('click', toggleNav)
- */
+menuIcon.addEventListener('click', toggleNav)
+
