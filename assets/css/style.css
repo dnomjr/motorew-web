@@ -106,7 +106,7 @@ header:before {
 }
 .menu-btn:before,
 .menu-btn:after {
-  background-color: #fff;
+  background-color: red;
   content: '';
   display: block;
   width: 36px;
@@ -396,11 +396,11 @@ main {
     flex-basis: 50%;
   }
 } */
-
+/* 
 @media screen and (max-width: 768px) {
-  /*   .header__contact {
+    .header__contact {
     display: none;
-  } */
+  }
   .nav__contact {
     flex-basis: 0;
   }
@@ -472,7 +472,24 @@ main {
   .about__services svg {
     height: 120px;
   }
-
+ (max-width: 426px) {
+  .about {
+    margin-top: 150px;
+  }
+  .hero__cta h1 {
+    font-size: clamp(32px, 16px + 4vw, 80px);
+  }
+  .about__services svg {
+    height: 100px;
+  }
+  .about__services p {
+    font-size: 13px;
+  }
+  .about > p {
+    width: 90%;
+    line-height: 30px;
+  }
+}
   .space {
     margin-top: 80px;
   }
@@ -495,3 +512,4 @@ main {
     line-height: 30px;
   }
 }
+ */
