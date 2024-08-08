@@ -160,10 +160,9 @@ header:before {
   justify-content: space-between;
   align-items: end;
   flex-wrap: wrap;
-  row-gap: 25px;
   height: calc(100vh - 100px);
   overflow: auto;
-  padding-bottom: 6px;
+  padding-bottom: 5px;
 }
 .show {
   visibility: visible;
@@ -187,7 +186,7 @@ nav li a:hover {
 }
 
 .overlay .contact {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .overlay .contact ul li:first-child {
   font-size: 32px;
@@ -208,6 +207,7 @@ nav li a:hover {
 
 /* MAIN CONTENT*/
 main {
+  overflow: hidden;
   position: relative;
   margin-top: 105.6px;
 }
