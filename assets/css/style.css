@@ -106,7 +106,7 @@ header:before {
 }
 .menu-btn:before,
 .menu-btn:after {
-  background-color: red;
+  background-color: #fff;
   content: '';
   display: block;
   width: 36px;
