@@ -1,10 +1,9 @@
 :root {
   --color-primary: #ffc100;
   --color-secondary: #292929;
+  --color-tertiary: #434343;
+  --font-section-xl: normal normal 900 clamp(36px, 11.97vw, 230px) / 1 Termina;
   --transition: all ease-out 0.3s;
-
-  --title-section: normal normal 900 clamp(36px, 12vw, 230px) / 1 Termina;
-  --title-color: #434343;
 }
 
 body {
@@ -45,7 +44,7 @@ header:before {
   justify-content: space-between;
 }
 
-/* CONTACT */
+/* CONTACT BUTTON */
 .contact {
   display: inline-block;
   border: 1px solid var(--color-primary);
@@ -86,6 +85,7 @@ header:before {
   background: url('../icons/service-dark.svg') no-repeat center/contain;
 }
 
+/* LOGO */
 .header .logo {
   position: absolute;
   left: 50%;
@@ -143,13 +143,9 @@ header:before {
   left: 0;
   width: 100%;
   height: 100%;
-  /* padding-bottom: 130px; */
   padding-top: 100px;
-
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(56px);
-  /*   overflow: auto;
- */
   transition: var(--transition);
   visibility: hidden;
   opacity: 0;
@@ -185,6 +181,7 @@ nav li a:hover {
   text-decoration: underline;
 }
 
+/* OVERLAY CONTACT BUTTON */
 .overlay .contact {
   margin-bottom: 25px;
 }
@@ -206,12 +203,13 @@ nav li a:hover {
 }
 
 /* MAIN CONTENT*/
+/* HERO SECTION */
 main {
   margin-top: 100px;
 }
 
 .hero {
-  background: url('../images/uvod-logo.png') no-repeat right
+  background: url('../images/intro-logo.png') no-repeat right
     top/calc(100vw * (850 / 1920)) auto;
   mask-image: linear-gradient(
     to top,
@@ -226,7 +224,7 @@ main {
   width: 100%;
   height: calc(100vw * (1280 / 1920));
   margin-top: -8.33vw; /* ((160 / 1920) * 100) */
-  background: url('../images/motorka.png') no-repeat 50% / cover;
+  background: url('../images/motorbike.png') no-repeat 50% / cover;
 }
 
 .hero div {
@@ -268,33 +266,35 @@ main {
   transition: var(--transition);
 }
 
-/* ABOUT */
-/* ABOUT */
+/* ABOUT SECTION */
 .about {
-  margin-top: 280px;
+  margin-top: -19.8vw;
   position: relative;
-  z-index: 12;
+  z-index: 1;
 }
-.title {
-  font: var(--title-section);
-  color: var(--title-color);
+.about h2 {
+  font: var(--font-section-xl);
+  color: var(--color-tertiary);
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 2.18vw;
 }
-.about > p {
+.about p {
   text-align: center;
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
-  line-height: 45px;
+  line-height: 2;
 }
-.about img {
-  max-width: 100%;
+.about::after {
+  content: '';
   display: block;
-  height: auto;
-  margin: 0 auto;
+  width: 100%;
+  height: clamp(350px, 28vw, 533px);
+  background: url('../images/helmet.png') no-repeat
+    center/clamp(350px, 28vw, 533px) auto;
 }
 
-.about__services {
+/* .about__services {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -344,7 +344,7 @@ main {
 }
 #space3 {
   left: 100%;
-}
+} */
 
 @media screen and (max-width: 900px) {
   .header {
@@ -374,7 +374,8 @@ main {
   .hero h1 span:first-child {
     display: inline;
   }
-  .hero p {
+  .hero p,
+  .about p {
     width: 75%;
     font-size: clamp(12px, 2.5vw, 16px);
   }
@@ -429,6 +430,10 @@ main {
       rgba(0, 0, 0, 0.05) 25%,
       rgb(0, 0, 0) 50%
     );
+  }
+
+  .about::after {
+    display: none;
   }
 }
 
