@@ -207,91 +207,73 @@ nav li a:hover {
 
 /* MAIN CONTENT*/
 main {
-  overflow: hidden;
-  position: relative;
-  margin-top: 105.6px;
+  margin-top: 100px;
 }
+
 .hero {
-  display: flex;
-  overflow: visible;
+  background: url('../images/uvod-logo.png') no-repeat right
+    top/calc(100vw * (850 / 1920)) auto;
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0) 15%,
+    rgba(0, 0, 0, 0.05) 30%,
+    rgb(0, 0, 0) 60%
+  );
 }
-.hero__cta {
-  flex-basis: 50%;
+.hero::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: calc(100vw * (1280 / 1920));
+  margin-top: -8.33vw; /* ((160 / 1920) * 100) */
+  background: url('../images/motorka.png') no-repeat 50% / cover;
 }
-.hero__cta h1 {
+
+.hero div {
+  padding-top: clamp(20px, 3.38vw, 65px);
+}
+
+.hero h1 {
   font-weight: 300;
-  font-size: clamp(36px, 16px + 4vw, 80px);
+  font-size: clamp(26px, 4.79vw, 92px);
   white-space: nowrap;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-.hero__cta h1 span {
+.hero h1 span {
   font-weight: 900;
 }
-.hero__cta p {
+.hero h1 span:first-child {
+  display: block;
+}
+.hero p {
+  width: 45%;
   line-height: 2;
-  margin-bottom: 40px;
+  margin-bottom: 2.86vw;
 }
-.hero__cta p,
-.about > p {
-  font-size: clamp(10px, 4vw, 16px);
-}
-.hero__cta a {
+
+.hero a {
   display: inline-block;
-  border: 1px solid var(--primary-color);
-  padding: 10px 25px;
+  border: 1px solid var(--color-primary);
+  padding: 17px 40px 15px 40px;
   border-radius: 5px;
-  font-weight: 600;
+  font-weight: 900;
+  font-size: 18px;
   position: relative;
-  /*  z-index: 11; */
 }
-.hero__cta a:hover,
-.hero__cta a:active {
-  background-color: var(--primary-color);
+.hero a:hover,
+.hero a:active {
+  background-color: var(--color-primary);
   color: #000;
   transition: var(--transition);
 }
-.hero__cta-bike {
-  /*   -webkit-mask-image: linear-gradient(to top, transparent 5%, black 100%);
-  mask-image: linear-gradient(to top, transparent 5%, black 50%); */
-  width: 1800px;
-  max-width: 100%;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -5%);
-  /* z-index: 10; */
-  -webkit-mask-image: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0) 25%,
-    rgba(0, 0, 0, 0.15) 50%,
-    rgb(0, 0, 0) 70%
-  );
-  mask-image: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0) 25%,
-    rgba(0, 0, 0, 0.05) 50%,
-    rgb(0, 0, 0) 70%
-  );
-}
-.hero__cta-bike img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-.hero__logo {
-  flex-basis: 50%;
-}
-.hero__logo img {
-  max-width: 100%;
-  height: auto;
-  transform: translateX(5vw);
-}
-
+/* ABOUT */
+/* ABOUT */
 .about {
   margin-top: 280px;
   position: relative;
-  /* z-index: 12; */
+  z-index: 12;
 }
 .title {
   font: var(--title-section);
@@ -374,11 +356,33 @@ main {
   nav {
     padding-right: 0;
   }
+
+  .hero {
+    mask-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 15%,
+      rgba(0, 0, 0, 0.05) 30%,
+      rgb(0, 0, 0) 55%
+    );
+  }
 }
 
-@media (min-width: 1487px) and (min-height: 740px) {
-  .overlay > div {
-    padding-bottom: 130px;
+@media screen and (max-width: 768px) {
+  .hero {
+    background: none;
+  }
+  .hero h1 span:first-child {
+    display: inline;
+  }
+  .hero p {
+    width: 75%;
+    font-size: clamp(12px, 2.5vw, 16px);
+  }
+  .hero a {
+    padding: 2.65vw 6.25vw 2.34vw 6.25vw;
+    border-radius: 5px;
+
+    font-size: clamp(14px, 2.8vw, 18px);
   }
 }
 
@@ -402,7 +406,6 @@ main {
   }
   .overlay > div {
     justify-content: space-between;
-    /* height: calc(100vh - 150px); */
   }
   .overlay .contact ul {
     padding: 10px 28px 10px 15px;
@@ -418,12 +421,27 @@ main {
     width: 32px;
     margin: 0 10px;
   }
+
+  .hero {
+    mask-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0.05) 25%,
+      rgb(0, 0, 0) 50%
+    );
+  }
 }
 
-@media screen and (max-width: 426px) {
+@media (min-width: 1487px) and (min-height: 740px) {
+  .overlay > div {
+    padding-bottom: 130px;
+  }
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 426px) {
+} */
+
+/* @media screen and (max-width: 768px) {
   .header__contact {
     display: none;
   }
@@ -537,4 +555,4 @@ main {
     width: 90%;
     line-height: 30px;
   }
-}
+} */
