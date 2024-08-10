@@ -483,6 +483,9 @@ main {
   .services ul {
     justify-content: center;
   }
+  .services ul li {
+    font-size: clamp(9px, 2.77vw, 16px);
+  }
 }
 
 @media (min-width: 1487px) and (min-height: 740px) {
