@@ -303,7 +303,7 @@ main {
 
 /* SERVICES SECTION */
 .services {
-  margin-bottom: 100px;
+  margin-bottom: 10vw;
 }
 .services ul {
   width: 78vw;
@@ -335,26 +335,39 @@ main {
 
 /* GALLERY SECTION */
 .gallery {
+  height: 52vw;
   overflow: hidden;
+  position: relative;
 }
 .gallery h2 {
   font: var(--font-section-xl);
   color: var(--color-tertiary);
   text-transform: uppercase;
   text-align: center;
+  transform: translateY(16%);
 }
 .gallery img {
   position: absolute;
   left: 50%;
   width: 50vw; /* 960px */
   height: 33.33vw; /* 640px */
-  transform: translate(-50%, -6%);
+  transform: translateX(-50%);
 }
 .gallery img:first-of-type {
-  transform: translate(-150%, -6%);
+  transform: translateX(-150%);
 }
 .gallery img:last-of-type {
-  transform: translate(50%, -6%);
+  transform: translateX(50%);
+}
+.gallery::before {
+  content: '';
+  height: 44.8vw; /* 860px */
+  width: 39.6vw; /* 760px */
+  position: absolute;
+  z-index: 2;
+  top: 6.25vw; /* 120px */
+  right: -0.52vw; /* -10px */
+  background: url('../icons/gallery-item.svg') no-repeat center/contain;
 }
 
 /* RESPONSIVE SECTION */
