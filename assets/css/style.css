@@ -4,6 +4,7 @@
   --color-tertiary: #434343;
   --color-border: #4d4d4d;
   --font-section-xl: normal normal 900 clamp(36px, 11.97vw, 230px) / 1 Termina;
+  --font-section-xs: normal normal 300 clamp(16px, 2.3vw, 44px) / 1 Termina;
   --transition: all ease-out 0.3s;
 }
 
@@ -480,7 +481,6 @@ main {
   right: 0;
   transform: translate(50%, -50%);
 }
-
 .reviews .selects button {
   background-color: transparent;
   border: 1px solid var(--color-border);
@@ -496,6 +496,41 @@ main {
   background-color: var(--color-primary);
   height: 1.97vw;
   width: 1.66vw;
+}
+
+/* LOCATION SECTION */
+.location {
+  text-align: center;
+  margin-bottom: 7vw;
+  text-transform: uppercase;
+}
+.location h2 {
+  font: var(--font-section-xs);
+  margin-bottom: 2.4vw;
+}
+.location address span {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 900;
+  font-size: clamp(6px, 1.05vw, 20px);
+  line-height: 2;
+  border: 1px solid var(--color-border);
+  border-bottom: none;
+  border-radius: 1.56vw 1.56vw 0px 0px;
+  padding: 0.94vw 2.6vw;
+  background-color: #46464625;
+}
+.location address div {
+  width: 57vw;
+  height: 36vw;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+  border-radius: 1.05vw;
+  overflow: hidden;
+}
+.location address div iframe {
+  height: 100%;
+  width: 100%;
 }
 
 /* RESPONSIVE SECTION */
