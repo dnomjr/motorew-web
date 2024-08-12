@@ -2,6 +2,7 @@
   --color-primary: #ffc100;
   --color-secondary: #292929;
   --color-tertiary: #434343;
+  --color-border: #4d4d4d;
   --font-section-xl: normal normal 900 clamp(36px, 11.97vw, 230px) / 1 Termina;
   --transition: all ease-out 0.3s;
 }
@@ -386,18 +387,19 @@ main {
   font-size: clamp(10px, 1.3vw, 25px); /* 25px */
   line-height: 2.1vw; /* 41px */
 }
-.reviews > div {
+.reviews .slider {
   width: 66.77vw; /* 1282px */
   position: relative;
   height: fit-content;
   margin: 0 auto;
   border-radius: 1.56vw; /* 30px */
-  border: 1px solid #464646;
+  border: 1px solid var(--color-border);
   background-color: #46464625;
   padding: 4.7vw 10.4vw 2.34vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 2.1vw;
 }
 .reviews blockquote {
   font-size: clamp(12px, 2.1vw, 40px);
@@ -453,19 +455,17 @@ main {
   width: 6.87vw;
   min-width: 50px;
 }
-.reviews button {
+.reviews .slider button {
   position: absolute;
   background: transparent;
   border: none;
   color: #fff;
   top: 50%;
-  transform: translateY(-50%);
   cursor: pointer;
 }
-
 .reviews button svg {
-  width: 6.25vw; /* 120px */
-  height: 3.125vw; /* 60px */
+  width: clamp(30px, 6.25vw, 120px); /* 120px */
+  height: clamp(15px, 3.125vw, 60px); /* 60px */
   fill: #fff;
 }
 .reviews button:hover svg,
@@ -479,6 +479,23 @@ main {
 .reviews .right-arrow {
   right: 0;
   transform: translate(50%, -50%);
+}
+
+.reviews .selects button {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  width: 1.14vw; /* 48px - 26px = 22px */
+  height: 1.35vw; /* 26px */
+  transform: skew(-45deg);
+  margin-right: 0.52vw;
+}
+.reviews .selects button:last-child {
+  margin-right: 0;
+}
+.reviews .selects button.active-slide {
+  background-color: var(--color-primary);
+  height: 1.97vw;
+  width: 1.66vw;
 }
 
 /* RESPONSIVE SECTION */
@@ -605,10 +622,10 @@ main {
     justify-content: center;
   }
   .services ul li {
-    font-size: clamp(9px, 2.77vw, 16px);
+    font-size: clamp(8px, 2.77vw, 16px);
   }
 
-  .reviews > div {
+  .reviews .slider {
     padding-left: 20px;
     padding-right: 20px;
   }
