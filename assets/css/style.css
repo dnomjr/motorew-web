@@ -701,6 +701,12 @@ main {
   .reviews blockquote::after {
     right: 0;
   }
+
+  .location address div {
+    width: 100%;
+    height: clamp(190px, 50vw, 365px);
+    border-radius: 0;
+  }
 }
 
 @media (min-width: 1487px) and (min-height: 740px) {
