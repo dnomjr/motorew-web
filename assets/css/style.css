@@ -389,7 +389,7 @@ main {
   line-height: 2.1vw; /* 41px */
 }
 .reviews .slider {
-  width: 66.77vw; /* 1282px */
+  width: clamp(260px, 66.77vw, 1282px); /* 1282px */
   position: relative;
   height: fit-content;
   margin: 0 auto;
@@ -521,8 +521,8 @@ main {
   background-color: #46464625;
 }
 .location address div {
-  width: 57vw;
-  height: 36vw;
+  width: clamp(300px, 57vw, 1090px);
+  height: clamp(190px, 36vw, 690px);
   margin: 0 auto;
   border: 1px solid var(--color-border);
   border-radius: 1.05vw;
@@ -531,6 +531,31 @@ main {
 .location address div iframe {
   height: 100%;
   width: 100%;
+}
+
+/* PARTNERS SECTION */
+.partners {
+  margin-bottom: 7vw;
+}
+.partners h2 {
+  font: var(--font-section-xs);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 3.3vw;
+}
+.partners ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.partners ul li {
+  display: inline-block;
+}
+.partners ul li img {
+  width: clamp(140px, 16.15vw, 310px);
+  height: clamp(44.1px, 5.05vw, 97px);
 }
 
 /* RESPONSIVE SECTION */
@@ -592,6 +617,11 @@ main {
 
   .services ul li {
     font-size: clamp(12px, 2.77vw, 16px);
+  }
+
+  .partners ul li {
+    text-align: center;
+    flex-basis: 35%;
   }
 }
 
@@ -661,8 +691,8 @@ main {
   }
 
   .reviews .slider {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
   .reviews blockquote::before {
     top: 10px;
