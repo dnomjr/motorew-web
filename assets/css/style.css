@@ -338,6 +338,7 @@ main {
   height: 52vw;
   overflow: hidden;
   position: relative;
+  margin-bottom: 7vw;
 }
 .gallery h2 {
   font: var(--font-section-xl);
@@ -368,6 +369,116 @@ main {
   top: 6.25vw; /* 120px */
   right: -0.52vw; /* -10px */
   background: url('../icons/gallery-item.svg') no-repeat center/contain;
+}
+
+/* REVIEWS SECTION */
+.reviews {
+  text-align: center;
+  margin-bottom: 7vw;
+}
+.reviews h2 {
+  font: var(--font-section-xl);
+  color: var(--color-tertiary);
+  text-transform: uppercase;
+  transform: translateY(16%);
+}
+.reviews h3 {
+  font-size: clamp(10px, 1.3vw, 25px); /* 25px */
+  line-height: 2.1vw; /* 41px */
+}
+.reviews > div {
+  width: 66.77vw; /* 1282px */
+  position: relative;
+  height: fit-content;
+  margin: 0 auto;
+  border-radius: 1.56vw; /* 30px */
+  border: 1px solid #464646;
+  background-color: #46464625;
+  padding: 4.7vw 10.4vw 2.34vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.reviews blockquote {
+  font-size: clamp(12px, 2.1vw, 40px);
+  line-height: clamp(14px, 2.9vw, 55px);
+  padding-top: clamp(16px, 1.3vw, 25px);
+  position: relative;
+  margin-bottom: 2.9vw;
+}
+.reviews blockquote::before,
+.reviews blockquote::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 4.1vw;
+  height: 4.7vw;
+  background-color: #ffffff23;
+  -webkit-clip-path: polygon(
+    0 100%,
+    30% 0,
+    60% 0,
+    30% 100%,
+    40% 100%,
+    70% 0,
+    100% 0,
+    70% 100%
+  );
+  clip-path: polygon(
+    0 100%,
+    30% 0,
+    60% 0,
+    30% 100%,
+    40% 100%,
+    70% 0,
+    100% 0,
+    70% 100%
+  );
+}
+.reviews blockquote::before {
+  top: 0;
+  left: 2.1vw;
+}
+.reviews blockquote::after {
+  bottom: 0.5vw;
+  right: 5vw;
+}
+.reviews span {
+  font-size: clamp(8px, 0.83vw, 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reviews span img {
+  width: 6.87vw;
+  min-width: 50px;
+}
+.reviews button {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.reviews button svg {
+  width: 6.25vw; /* 120px */
+  height: 3.125vw; /* 60px */
+  fill: #fff;
+}
+.reviews button:hover svg,
+.reviews button:active svg {
+  fill: var(--color-primary);
+}
+.reviews .left-arrow {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+.reviews .right-arrow {
+  right: 0;
+  transform: translate(50%, -50%);
 }
 
 /* RESPONSIVE SECTION */
@@ -495,6 +606,18 @@ main {
   }
   .services ul li {
     font-size: clamp(9px, 2.77vw, 16px);
+  }
+
+  .reviews > div {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .reviews blockquote::before {
+    top: 10px;
+    left: 0;
+  }
+  .reviews blockquote::after {
+    right: 0;
   }
 }
 
