@@ -88,13 +88,11 @@ header:before {
   display: inline-block;
   border-left: 1px solid var(--color-primary);
   padding: 10px 28px 10px 15px;
+  font-size: 12px;
 }
 .contact-btn ul li:first-child {
   font-size: 16px;
   font-weight: bold;
-}
-.contact-btn ul li {
-  font-size: 12px;
 }
 .contact-btn::before {
   content: '';
@@ -102,7 +100,7 @@ header:before {
   height: 32px;
   width: 32px;
   background: url('../icons/service-light.svg') no-repeat center/contain;
-  transform: translateY(-4px);
+  transform: translate(2px, -2px);
   margin: 0 10px;
   transition: background-image 0.3s;
 }
@@ -170,6 +168,7 @@ header:before {
   width: 100%;
   height: 100%;
   padding-top: 100px;
+
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(56px);
   transition: var(--transition);
@@ -177,15 +176,17 @@ header:before {
   opacity: 0;
   z-index: -1;
 }
-.overlay > div {
+
+.overlay div {
   display: flex;
   justify-content: space-between;
   align-items: end;
   flex-wrap: wrap;
   height: calc(100vh - 100px);
   overflow: auto;
-  padding-bottom: 5px;
+  padding-bottom: clamp(50px, 6.77vw, 130px);
 }
+
 .show {
   visibility: visible;
   opacity: 1;
@@ -197,8 +198,8 @@ nav {
 }
 nav li {
   font-weight: 900;
-  font-size: clamp(16px, 32px + 2vw, 70px);
-  line-height: clamp(16px, 62px + 2vw, 102px);
+  font-size: clamp(32px, 3.65vw, 70px);
+  line-height: clamp(44px, 5.3vw, 102px);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -209,23 +210,24 @@ nav li a:hover {
 
 /* HEADER - OVERLAY CONTACT BUTTON */
 .overlay .contact-btn {
-  margin-bottom: 25px;
+  margin-bottom: 1.3vw;
 }
 .overlay .contact-btn ul li:first-child {
-  font-size: 32px;
+  font-size: clamp(16px, 1.66vw, 33px);
 }
 .overlay .contact-btn ul li {
-  font-size: 24px;
+  font-size: clamp(12px, 1.25vw, 25px);
 }
 .overlay .contact-btn::before {
-  height: 68px;
-  width: 68px;
-  margin: 0 30px;
+  height: clamp(32px, 3.55vw, 68px);
+  width: clamp(32px, 3.55vw, 68px);
+  margin: 0 1.55vw;
 }
 .overlay .contact-btn ul {
   display: inline-block;
   border-left: 1px solid var(--color-primary);
-  padding: 20px 55px 20px 25px;
+  padding: clamp(10px, 1.04vw, 25px) clamp(14px, 2.9vw, 28px)
+    clamp(10px, 1.04vw, 25px) clamp(8px, 1.3vw, 15px);
 }
 
 /* MAIN CONTENT*/
@@ -447,13 +449,13 @@ main {
   bottom: 0.5vw;
   right: 5vw;
 }
-.reviews span {
+.reviews .slider span {
   font-size: clamp(8px, 0.83vw, 16px);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.reviews span img {
+.reviews .slider span img {
   width: 6.87vw;
   min-width: 50px;
 }
@@ -482,7 +484,8 @@ main {
   right: 0;
   transform: translate(50%, -50%);
 }
-.reviews .selects button {
+.reviews .selects span {
+  display: inline-block;
   background-color: transparent;
   border: 1px solid var(--color-border);
   width: 1.14vw; /* 48px - 26px = 22px */
@@ -490,10 +493,10 @@ main {
   transform: skew(-45deg);
   margin-right: 0.52vw;
 }
-.reviews .selects button:last-child {
+.reviews .selects span:last-child {
   margin-right: 0;
 }
-.reviews .selects button.active-slide {
+.reviews .selects span.active-slide {
   background-color: var(--color-primary);
   height: 1.97vw;
   width: 1.66vw;
@@ -597,12 +600,23 @@ footer::before {
 
 /* RESPONSIVE SECTION */
 @media screen and (max-width: 992px) {
-  .header {
-    justify-content: end;
+  .contact-btn {
+    border-radius: 0.8vw;
   }
-  .header .contact-btn {
-    display: none;
+  .contact-btn ul {
+    padding: 1vw 2.8vw 1vw 1.5vw;
+    font-size: 1.2vw;
   }
+  .contact-btn ul li:first-child {
+    font-size: 1.6vw;
+  }
+  .contact-btn::before {
+    height: 3.2vw;
+    width: 3.2vw;
+    transform: translate(0.2vw, -0.2vw);
+    margin: 0 1vw;
+  }
+
   nav {
     padding-right: 0;
   }
@@ -634,6 +648,33 @@ footer::before {
 }
 
 @media screen and (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+  }
+  .header .contact-btn {
+    display: none;
+  }
+  .header .logo {
+    position: static;
+    transform: translate(0, 6px);
+  }
+  .overlay .contact-btn {
+    margin-bottom: 0;
+  }
+
+  header .overlay div {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: start;
+  }
+  header .overlay div nav {
+    margin-top: 100px;
+  }
+  nav li {
+    font-size: clamp(23px, 6vw, 48px);
+    line-height: clamp(32px, 8vw, 68px);
+  }
+
   .hero {
     background: none;
   }
@@ -663,39 +704,40 @@ footer::before {
 }
 
 @media screen and (max-width: 576px) {
-  .header {
-    justify-content: space-between;
+  header {
+    height: 17.36vw;
   }
-  .header .logo {
-    position: relative;
-    left: 0;
-    transform: translate(0, 6px);
-  }
-
-  nav li {
-    font-size: clamp(16px, 7vw, 40px);
-    line-height: clamp(16px, 10vw, 102px);
+  .header .logo svg {
+    width: 41vw;
+    height: 5.5vw;
   }
 
-  .overlay {
-    padding-bottom: 50px;
+  .menu-btn:before,
+  .menu-btn:after {
+    width: 6.25vw;
+    height: 0.7vw;
   }
-  .overlay > div {
-    justify-content: space-between;
+  .menu-btn:before {
+    box-shadow: 0 1.91vw 0 #fff;
+    margin-bottom: 3.125vw;
   }
-  .overlay .contact-btn ul {
-    padding: 10px 28px 10px 15px;
+  .open.menu-btn:before {
+    transform: translateY(1.91vw) rotate(45deg);
   }
-  .overlay .contact-btn ul li:first-child {
-    font-size: 16px;
+  .open.menu-btn:after {
+    transform: translateY(-1.91vw) rotate(-45deg);
   }
-  .overlay .contact-btn ul li {
-    font-size: 12px;
+
+  .menu-btn:hover:before {
+    box-shadow: 0 1.91vw 0 #ffc100;
   }
+
   .overlay .contact-btn::before {
-    height: 32px;
-    width: 32px;
-    margin: 0 10px;
+    margin: 0 1.5vw 0 2vw;
+  }
+
+  main {
+    margin-top: 17.36vw;
   }
 
   .hero {
@@ -739,19 +781,13 @@ footer::before {
     right: 0;
   }
 
-  /*   .location address div {
-    width: 100%;
-    height: clamp(190px, 50vw, 365px);
-    border-radius: 0;
-  } */
-
   .partners::after {
     display: none;
   }
 }
 
-@media (min-width: 1487px) and (min-height: 740px) {
+/* @media screen and (min-width: 1487px) and (max-height: 737px) {
   .overlay > div {
-    padding-bottom: 130px;
+    padding-bottom: 10px;
   }
-}
+} */
