@@ -3,8 +3,8 @@
   --color-secondary: #292929;
   --color-tertiary: #434343;
   --color-border: #4d4d4d;
-  --font-section-xl: normal normal 900 clamp(36px, 11.97vw, 230px) / 1 Termina;
-  --font-section-xs: normal normal 300 clamp(16px, 2.3vw, 44px) / 1 Termina;
+  --font-section-xl: normal normal 900 clamp(40px, 11.97vw, 230px) / 1 Termina;
+  --font-section-xs: normal normal 300 clamp(24px, 2.3vw, 44px) / 1 Termina;
   --transition: all ease-out 0.3s;
 }
 
@@ -14,6 +14,10 @@ body {
   background-color: var(--color-secondary);
   color: #fff;
   position: relative;
+}
+
+h1 {
+  margin: 0;
 }
 
 .container {
@@ -254,8 +258,7 @@ main {
 }
 .hero::after {
   content: '';
-  display: inline-block;
-  width: 100%;
+  display: block;
   height: calc(100vw * (1280 / 1920));
   margin-top: -8.33vw; /* ((160 / 1920) * 100) */
   background: url('../images/motorbike.png') no-repeat 50% / cover;
@@ -273,9 +276,7 @@ main {
 .hero h1 span {
   font-weight: 900;
 }
-.hero h1 span:first-child {
-  display: block;
-}
+
 .hero p {
   width: 45%;
   line-height: 2;
@@ -284,10 +285,11 @@ main {
 .hero a {
   display: inline-block;
   border: 1px solid var(--color-primary);
-  padding: 17px 40px 15px 40px;
+  padding: clamp(11px, 0.88vw, 17px) clamp(26px, 2.08vw, 40px)
+    clamp(10px, 0.78vw, 15px) clamp(26px, 2.08vw, 40px);
   border-radius: 5px;
   font-weight: 900;
-  font-size: 18px;
+  font-size: clamp(12px, 0.95vw, 18px);
   position: relative;
 }
 .hero a:hover,
@@ -333,11 +335,13 @@ main {
   align-items: center;
 }
 .services ul li {
-  font-size: 18px;
+  font-size: 18px /* clamp(10px, 0.95vw, 18px) */;
   line-height: 1.7;
   font-weight: bold;
   text-align: center;
   display: inline-block;
+  /*   margin-right: 40px;
+ */
 }
 .services ul li img {
   width: 17.2vw; /* 331px */
@@ -348,7 +352,7 @@ main {
 }
 .services ul li span {
   display: inline-block;
-  width: 80%;
+  width: 150px;
 }
 
 /* GALLERY SECTION */
@@ -573,7 +577,7 @@ main {
 }
 .contact address a {
   display: inline-block;
-  font-size: 5.2vw;
+  font-size: clamp(32px, 5.2vw, 100px);
   font-weight: 900;
   line-height: 1;
 }
@@ -635,15 +639,18 @@ footer::before {
       rgb(0, 0, 0) 55%
     );
   }
-
-  .services ul {
-    flex-wrap: wrap;
-    row-gap: 12.1vw;
+  .hero p,
+  .about p {
+    font-size: clamp(10px, 1.61vw, 16px);
   }
-  .services ul li img {
-    width: 27.83vw;
-    height: 22.08vw;
-    margin-bottom: 20px;
+  .hero a {
+    border-radius: 3px;
+  }
+  .services ul li {
+    font-size: clamp(12px, 1.8vw, 18px);
+  }
+  .services ul li span {
+    width: clamp(100px, 15.2vw, 150px);
   }
 }
 
@@ -678,23 +685,23 @@ footer::before {
   .hero {
     background: none;
   }
-  .hero h1 span:first-child {
-    display: inline;
+  .hero h1 {
+    font-size: clamp(32px, 7.5vw, 92px);
   }
+
   .hero p,
   .about p {
     width: 75%;
-    font-size: clamp(12px, 2.5vw, 16px);
-  }
-  .hero a {
-    padding: 2.65vw 6.25vw 2.34vw 6.25vw;
-    border-radius: 5px;
-
-    font-size: clamp(14px, 2.8vw, 18px);
   }
 
-  .services ul li {
-    font-size: clamp(12px, 2.77vw, 16px);
+  .services ul {
+    flex-wrap: wrap;
+    row-gap: 12vw;
+  }
+  .services ul li img {
+    width: 27.83vw;
+    height: 22.08vw;
+    margin-bottom: 20px;
   }
 
   .partners ul li {
@@ -745,17 +752,21 @@ footer::before {
   }
 
   .hero {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .hero::after {
     -webkit-mask-image: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0) 10%,
-      rgba(0, 0, 0, 0.05) 25%,
-      rgb(0, 0, 0) 50%
+      rgba(0, 0, 0, 0) 15%,
+      rgba(0, 0, 0, 0.05) 30%,
+      rgb(0, 0, 0) 60%
     );
     mask-image: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0) 10%,
-      rgba(0, 0, 0, 0.05) 25%,
-      rgb(0, 0, 0) 50%
+      rgba(0, 0, 0, 0) 25%,
+      rgba(0, 0, 0, 0.05) 50%,
+      rgb(0, 0, 0) 90%
     );
   }
 
@@ -764,13 +775,6 @@ footer::before {
   }
   .about::after {
     display: none;
-  }
-
-  .services ul {
-    justify-content: center;
-  }
-  .services ul li {
-    font-size: clamp(8px, 2.77vw, 16px);
   }
 
   .reviews .slider {
