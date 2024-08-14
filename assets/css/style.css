@@ -184,7 +184,7 @@ header:before {
   flex-wrap: wrap;
   height: calc(100vh - 100px);
   overflow: auto;
-  padding-bottom: clamp(50px, 6.77vw, 130px);
+  padding-bottom: clamp(80px, 6.77vw, 130px);
 }
 
 .show {
@@ -201,7 +201,7 @@ nav li {
   font-size: clamp(32px, 3.65vw, 70px);
   line-height: clamp(44px, 5.3vw, 102px);
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: wrap;
 }
 nav li a:hover {
   color: var(--color-primary);
@@ -734,6 +734,10 @@ footer::before {
 
   .overlay .contact-btn::before {
     margin: 0 1.5vw 0 2vw;
+  }
+  nav li {
+    font-size: clamp(23px, 7vw, 48px);
+    line-height: clamp(32px, 10vw, 68px);
   }
 
   main {
