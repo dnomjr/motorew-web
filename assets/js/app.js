@@ -4,20 +4,18 @@ const menuIcon = document.querySelector('.menu-btn')
 const menuOverlay = document.querySelector('.overlay')
 const links = document.querySelectorAll('nav a')
 
-const showOverlay = () => menuOverlay.classList.toggle('show')
-
-const toggleNav = function () {
-  showOverlay()
+const showMenu = () => {
+  menuOverlay.classList.toggle('show')
   menuIcon.classList.toggle('open')
 }
 
-const scrollSection = function (e) {
-  console.log(e.target)
-  showOverlay()
+const scrollToSection = function (e) {
+  e.preventDefault()
+  showMenu()
 }
 
 links.forEach(link => {
-  link.addEventListener('click', scrollSection)
+  link.addEventListener('click', scrollToSection)
 })
 
-menuIcon.addEventListener('click', toggleNav)
+menuIcon.addEventListener('click', showMenu)
