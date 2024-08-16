@@ -23,8 +23,6 @@ h1 {
   width: 90%;
   max-width: 1640px;
   margin: 0 auto;
-  /*   padding: 0 140px;
- */
 }
 
 .gallery h2,
@@ -191,32 +189,32 @@ header::before {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  height: 100%;
+  height: calc(100vh - 100px);
   overflow: auto;
   padding-bottom: 100px;
 }
 
-.show {
+.overlay.show {
   visibility: visible;
   opacity: 1;
   z-index: 10;
 }
 
-nav {
+.overlay nav {
+  margin-top: auto;
   padding-right: 40px;
-}
-nav li {
   font-weight: 900;
   font-size: 70px;
   line-height: 100px;
   text-transform: uppercase;
   white-space: nowrap;
 }
-nav li a {
+
+.overlay nav li a {
   height: 100%;
   display: inline-block;
 }
-nav li a:hover {
+.overlay nav li a:hover {
   color: var(--color-primary);
   text-decoration: underline;
 }
@@ -224,23 +222,23 @@ nav li a:hover {
 /* HEADER - OVERLAY CONTACT BUTTON */
 .overlay .contact-btn {
   margin-bottom: 20px;
-}
-.overlay .contact-btn ul li:first-child {
-  font-size: 32px;
-}
-.overlay .contact-btn ul li {
-  font-size: 24px;
-}
-.overlay .contact-btn::before {
-  height: 68px;
-  width: 68px;
-  margin: 0 30px;
-  top: -3px;
+  margin-top: auto;
 }
 .overlay .contact-btn ul {
   display: inline-block;
   border-left: 1px solid var(--color-primary);
   padding: 20px 30px;
+  font-size: 24px;
+}
+.overlay .contact-btn ul li:first-child {
+  font-size: 32px;
+}
+
+.overlay .contact-btn::before {
+  height: 68px;
+  width: 68px;
+  margin: 0 30px;
+  top: -3px;
 }
 
 /* MAIN CONTENT*/
@@ -250,8 +248,7 @@ main {
 }
 
 .hero {
-  background: url('../images/intro-logo.png') no-repeat right
-    top/calc(100vw * (850 / 1920)) auto;
+  background: url('../images/intro-logo.png') no-repeat right top/44% auto;
   -webkit-mask-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0) 15%,
@@ -265,69 +262,67 @@ main {
     rgb(0, 0, 0) 60%
   );
 }
-.hero::after {
-  content: '';
-  display: block;
-  height: calc(100vw * (1280 / 1920));
-  margin-top: -8.33vw; /* ((160 / 1920) * 100) */
-  background: url('../images/motorbike.png') no-repeat 50% / cover;
-}
-.hero div {
-  padding-top: clamp(20px, 3.38vw, 65px);
-}
 .hero h1 {
   font-weight: 300;
-  font-size: clamp(26px, 4.79vw, 92px);
-  white-space: nowrap;
+  font-size: 92px;
   text-transform: uppercase;
+  padding-top: 65px;
   margin-bottom: 10px;
+  width: 850px;
 }
-.hero h1 span {
+.hero h1 strong {
   font-weight: 900;
+  display: inline-block;
+  width: 65%;
 }
-
 .hero p {
   width: 45%;
   line-height: 2;
-  margin-bottom: 2.86vw;
+  margin-bottom: 55px;
 }
 .hero a {
   display: inline-block;
   border: 1px solid var(--color-primary);
-  padding: clamp(11px, 0.88vw, 17px) clamp(26px, 2.08vw, 40px)
-    clamp(10px, 0.78vw, 15px) clamp(26px, 2.08vw, 40px);
+  padding: 18px 40px 17px;
   border-radius: 5px;
   font-weight: 900;
-  font-size: clamp(12px, 0.95vw, 18px);
+  font-size: 18px;
+  line-height: 1;
+  transition: var(--transition);
   position: relative;
+  z-index: 1;
 }
 .hero a:hover,
 .hero a:active {
   background-color: var(--color-primary);
   color: #000;
-  transition: var(--transition);
+}
+.hero::after {
+  content: '';
+  display: block;
+  height: 1280px;
+  margin-top: -160px;
+  background: url('../images/motorbike.png') no-repeat 50% / cover;
 }
 
 /* ABOUT SECTION */
 .about {
-  margin-top: -24vw;
+  margin-top: -500px;
   position: relative;
   z-index: 1;
 }
 .about p {
   text-align: center;
-  width: 50%;
+  width: 45%;
   margin: 0 auto;
-  line-height: 2;
-  margin-top: 2.2vw;
+  line-height: 2.5;
+  margin-top: 40px;
 }
 .about::after {
   content: '';
   display: block;
-  width: 100%;
-  height: clamp(350px, 28vw, 533px);
-  background: url('../images/helmet.png') no-repeat
-    center/clamp(350px, 28vw, 533px) auto;
+  height: 530px;
+  background: url('../images/helmet.png') no-repeat center/contain;
   margin-bottom: 20px;
 }
 
@@ -616,15 +611,16 @@ footer::before {
   header .overlay div {
     padding-bottom: 80px;
   }
-  header .overlay nav li {
+  header .overlay nav {
     font-size: 60px;
     line-height: 90px;
   }
+  header .overlay .contact-btn ul {
+    padding: 18px 27px;
+    font-size: 22px;
+  }
   header .overlay .contact-btn ul li:first-child {
     font-size: 29px;
-  }
-  header .overlay .contact-btn ul li {
-    font-size: 22px;
   }
   header .overlay .contact-btn::before {
     height: 62px;
@@ -632,63 +628,122 @@ footer::before {
     margin: 0 27px;
     top: -3px;
   }
-  header .overlay .contact-btn ul {
-    padding: 18px 27px;
+
+  .hero h1 {
+    font-size: 80px;
+    width: 750px;
+    padding-top: 60px;
+  }
+  .hero::after {
+    height: 1100px;
+    margin-top: -130px;
+  }
+  .about {
+    margin-top: -400px;
+  }
+  .about p {
+    margin-top: 30px;
+  }
+  .about::after {
+    height: 490px;
   }
 }
 
 @media screen and (max-width: 1399px) {
-  header .overlay nav li {
+  header .overlay nav {
     font-size: 50px;
     line-height: 80px;
   }
-
+  header .overlay .contact-btn ul {
+    font-size: 18px;
+    padding: 16px 24px;
+  }
   header .overlay .contact-btn ul li:first-child {
     font-size: 24px;
-  }
-  header .overlay .contact-btn ul li {
-    font-size: 18px;
   }
   header .overlay .contact-btn::before {
     height: 54px;
     width: 54px;
-    margin: 0 24px;
+    margin: 0 20px;
     top: -2px;
   }
-  header .overlay .contact-btn ul {
-    padding: 16px 24px;
+  .hero h1 {
+    font-size: 68px;
+    width: 625px;
+    padding-top: 55px;
+  }
+  .hero p {
+    margin-bottom: 45px;
+  }
+  .hero a {
+    font-size: 16px;
+    padding: 16px 36px 15px;
+  }
+  .hero::after {
+    height: 900px;
+    margin-top: -100px;
+  }
+  .about {
+    margin-top: -350px;
+  }
+  .about::after {
+    height: 450px;
   }
 }
 @media screen and (max-width: 1199px) {
   header .overlay div {
     padding-bottom: 60px;
   }
-  header .overlay nav li {
+  header .overlay nav {
     font-size: 40px;
     line-height: 70px;
   }
-
   header .overlay .contact-btn ul li:first-child {
     font-size: 22px;
   }
-  header .overlay .contact-btn ul li {
+  header .overlay .contact-btn ul {
     font-size: 14px;
+    padding: 14px 22px;
   }
   header .overlay .contact-btn::before {
     height: 49px;
     width: 49px;
-    margin: 0 18px;
+    margin: 0 15px;
     top: 1.5px;
   }
-  header .overlay .contact-btn ul {
-    padding: 14px 22px;
+  .hero h1 {
+    font-size: 56px;
+    width: 525px;
+    padding-top: 50px;
+  }
+  .hero::after {
+    height: 800px;
+    margin-top: -80px;
+  }
+  .about {
+    margin-top: -300px;
+  }
+  .about::after {
+    height: 410px;
   }
 }
 
 @media screen and (max-width: 991px) {
+  .header .contact-btn ul {
+    padding: 8px 24px 8px 13px;
+    font-size: 9px;
+  }
+  .header .contact-btn ul li:first-child {
+    font-size: 13px;
+  }
+  .header .contact-btn::before {
+    height: 30px;
+    width: 30px;
+    margin: 0 8px;
+    top: 1px;
+  }
   header .overlay div {
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-start;
   }
   header .overlay nav {
@@ -712,13 +767,34 @@ footer::before {
       rgb(0, 0, 0) 55%
     );
   }
-  .hero p,
+  .hero h1 {
+    font-size: 44px;
+    width: 400px;
+    padding-top: 45px;
+  }
+  .hero p {
+    margin-bottom: 35px;
+    font-size: 14px;
+  }
+  .hero::after {
+    height: 650px;
+    margin-top: -70px;
+  }
+  .about {
+    margin-top: -250px;
+    font-size: 14px;
+  }
+  .about p {
+    margin-top: 20px;
+  }
+  .about::after {
+    height: 370px;
+  }
+
+  /*  .hero p,
   .about p {
     font-size: clamp(10px, 1.61vw, 16px);
-  }
-  .hero a {
-    border-radius: 3px;
-  }
+  } */
   .services ul li {
     font-size: clamp(12px, 1.8vw, 18px);
   }
@@ -742,24 +818,22 @@ footer::before {
   header .overlay div {
     padding-bottom: 40px;
   }
-  header .overlay nav li {
+  header .overlay nav {
     font-size: 30px;
     line-height: 60px;
   }
+  header .overlay .contact-btn ul {
+    font-size: 12px;
+    padding: 12px 20px;
+  }
   header .overlay .contact-btn ul li:first-child {
     font-size: 20px;
-  }
-  header .overlay .contact-btn ul li {
-    font-size: 12px;
   }
   header .overlay .contact-btn::before {
     height: 44px;
     width: 44px;
     margin: 0 16px;
     top: 1.5px;
-  }
-  header .overlay .contact-btn ul {
-    padding: 12px 20px;
   }
 
   .hero {
@@ -768,12 +842,18 @@ footer::before {
     mask-image: none;
   }
   .hero h1 {
-    font-size: clamp(32px, 7.5vw, 92px);
+    font-size: 52px;
+    width: 475px;
+    padding-top: 40px;
   }
-
   .hero p,
   .about p {
-    width: 75%;
+    width: 70%;
+  }
+  .hero a {
+    font-size: 14px;
+    padding: 15px 32px 13px;
+    border-radius: 3px;
   }
   .hero::after {
     -webkit-mask-image: linear-gradient(
@@ -788,6 +868,15 @@ footer::before {
       rgba(0, 0, 0, 0.05) 50%,
       rgb(0, 0, 0) 90%
     );
+    margin-top: -50px;
+    height: 525px;
+  }
+  
+  .about {
+    margin-top: -200px;
+  }
+  .about::after {
+    height: 330px;
   }
 
   .services ul {
@@ -833,16 +922,17 @@ footer::before {
     box-shadow: 0 9.16px 0 #ffc100;
   }
 
-  header .overlay nav li {
+  header .overlay nav {
     font-size: 20px;
     line-height: 45px;
   }
 
+  header .overlay .contact-btn ul {
+    font-size: 10px;
+    padding: 10px 17px;
+  }
   header .overlay .contact-btn ul li:first-child {
     font-size: 16px;
-  }
-  header .overlay .contact-btn ul li {
-    font-size: 10px;
   }
   header .overlay .contact-btn::before {
     height: 36px;
@@ -850,22 +940,42 @@ footer::before {
     margin: 0 12px;
     top: 1.5px;
   }
-  header .overlay .contact-btn ul {
-    padding: 10px 17px;
-  }
 
   main {
-    margin-top: 17.36vw;
+    margin-top: 75px;
   }
 
   .hero {
     -webkit-mask-image: none;
     mask-image: none;
   }
-
-  .about {
-    margin-bottom: 50px;
+  .hero h1 {
+    font-size: 32px;
+    width: 300px;
+    padding-top: 25px;
   }
+  .hero p {
+    width: 300px;
+    margin-bottom: 25px;
+  }
+  .hero a {
+    font-size: 12px;
+    padding: 13px 24px 11px;
+  }
+  .hero::after {
+    height: 400px;
+    margin-top: -20px;
+  }
+  .about {
+    margin-top: -150px;
+  }
+  .about p {
+    margin-top: 10px;
+  }
+
+  /* .about {
+    margin-bottom: 50px;
+  } */
   .about::after {
     display: none;
   }
