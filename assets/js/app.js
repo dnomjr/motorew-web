@@ -10,8 +10,8 @@ const showMenu = () => {
 }
 
 const scrollToSection = function (e) {
-  e.preventDefault()
-  showMenu()
+  /*   e.preventDefault()
+   */ showMenu()
 }
 
 links.forEach(link => {
