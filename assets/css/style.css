@@ -52,9 +52,13 @@ h1 {
 
 .services,
 .gallery,
-.reviews,
-.location {
-  margin-bottom: 200px;
+.reviews {
+  margin-bottom: 160px;
+}
+.location,
+.partners,
+.contact {
+  margin-bottom: 80px;
 }
 
 /* HEADER SECTION */
@@ -478,8 +482,8 @@ main {
   justify-content: center;
 }
 .reviews .slider span img {
-  width: 6.87vw;
-  min-width: 50px;
+  width: 12%;
+  min-width: 60px;
 }
 .reviews .slider .arrow {
   position: absolute;
@@ -623,6 +627,17 @@ footer::before {
 
 /* RESPONSIVE SECTION */
 @media screen and (max-width: 1599px) {
+  /*  .services,
+  .gallery,
+  .reviews {
+    margin-bottom: 160px;
+  }
+  .location,
+  .partners,
+  .contact {
+    margin-bottom: 80px;
+  } */
+
   header .overlay div {
     padding-bottom: 80px;
   }
@@ -676,22 +691,24 @@ footer::before {
   .gallery ul li {
     width: 800px;
   }
-  /*   .gallery::after {
-    width: 720px;
-    top: 60px;
-  } */
 
-  /*   .gallery ul {
-    margin-top: -30px;
-    height: 782px;
+  .location address div {
+    height: 650px;
   }
-  .gallery::before {
-    width: 691px;
-    top: 65px;
-  } */
 }
 
 @media screen and (max-width: 1399px) {
+  .services,
+  .gallery,
+  .reviews {
+    margin-bottom: 140px;
+  }
+  .location,
+  .partners,
+  .contact {
+    margin-bottom: 70px;
+  }
+
   header .overlay nav {
     font-size: 50px;
     line-height: 80px;
@@ -749,8 +766,23 @@ footer::before {
   .reviews blockquote {
     font-size: 36px;
   }
+
+  .location address div {
+    height: 600px;
+  }
 }
 @media screen and (max-width: 1199px) {
+  .services,
+  .gallery,
+  .reviews {
+    margin-bottom: 120px;
+  }
+  .location,
+  .partners,
+  .contact {
+    margin-bottom: 60px;
+  }
+
   header .overlay div {
     padding-bottom: 60px;
   }
@@ -816,9 +848,24 @@ footer::before {
     font-size: 32px;
     padding: 40px 0;
   }
+
+  .location address div {
+    height: 550px;
+  }
 }
 
 @media screen and (max-width: 991px) {
+  .services,
+  .gallery,
+  .reviews {
+    margin-bottom: 100px;
+  }
+  .location,
+  .partners,
+  .contact {
+    margin-bottom: 50px;
+  }
+
   .header .contact-btn ul {
     padding: 8px 24px 8px 13px;
     font-size: 9px;
@@ -882,10 +929,6 @@ footer::before {
     height: 370px;
   }
 
-  .services,
-  .gallery {
-    margin-bottom: 120px;
-  }
   .services ul {
     row-gap: 40px;
   }
@@ -899,6 +942,10 @@ footer::before {
 
   .reviews .slider {
     padding: 40px 70px 30px 70px;
+    margin-bottom: 30px;
+  }
+  .reviews .slider h3 {
+    font-size: 20px;
   }
   .reviews blockquote {
     font-size: 28px;
@@ -917,9 +964,24 @@ footer::before {
     width: 27px;
     height: 31px;
   }
+
+  .location address div {
+    height: 500px;
+  }
 }
 
 @media screen and (max-width: 767px) {
+  .services,
+  .gallery,
+  .reviews {
+    margin-bottom: 80px;
+  }
+  .location,
+  .partners,
+  .contact {
+    margin-bottom: 40px;
+  }
+
   /* HEADER */
   header .header {
     justify-content: space-between;
@@ -995,10 +1057,10 @@ footer::before {
     height: 330px;
   }
 
-  .services,
+  /* .services,
   .gallery {
     margin-bottom: 100px;
-  }
+  } */
   .services ul {
     justify-content: center;
   }
@@ -1018,9 +1080,13 @@ footer::before {
 
   .reviews .slider {
     padding: 40px 60px 30px 60px;
+    margin-bottom: 25px;
+  }
+  .reviews .slider h3 {
+    font-size: 16px;
   }
   .reviews blockquote {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 40px;
     padding: 25px 0;
   }
@@ -1035,7 +1101,14 @@ footer::before {
   .reviews .slider span {
     font-size: 14px;
   }
+  .reviews .arrow svg {
+    width: 80px;
+    height: 40px;
+  }
 
+  .location address {
+    width: 100%;
+  }
   .location address span {
     font-size: 16px;
     padding: 14px 20px;
@@ -1045,8 +1118,8 @@ footer::before {
     font-size: 36px;
     margin-bottom: 35px;
   }
-  .location div {
-    border-radius: 16px;
+  .location address div {
+    border-radius: 0;
   }
 
   .partners ul li {
@@ -1127,7 +1200,7 @@ footer::before {
     margin-top: -20px;
   }
   .about {
-    margin-top: -150px;
+    margin: -150px 0 50px 0;
   }
   .about p {
     margin-top: 10px;
@@ -1138,10 +1211,6 @@ footer::before {
     display: none;
   }
 
-  .services,
-  .gallery {
-    margin-bottom: 80px;
-  }
   .services ul {
     row-gap: 25px;
   }
@@ -1159,10 +1228,11 @@ footer::before {
   }
 
   .reviews .slider {
-    padding: 40px 30px 30px 30px;
+    padding: 40px 35px 30px 35px;
+    margin-bottom: 20px;
   }
   .reviews .slider h3 {
-    font-size: 20px;
+    font-size: 12px;
   }
   .reviews blockquote {
     font-size: 16px;
@@ -1174,22 +1244,24 @@ footer::before {
     height: 30px;
   }
   .reviews .slider span {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .location address span {
     font-size: 14px;
-    width: 100%;
+
+    padding: 14px 12px;
+    width: 80%;
     border-radius: 20px 20px 0 0;
   }
   .location h2 {
-    font-size: 30px;
+    font-size: 32px;
     line-height: 1.2;
     margin-bottom: 25px;
     padding: 0 10px;
   }
   .location address div {
-    border-radius: 0 0 16px 16px;
+    border-radius: 0;
     height: 400px;
   }
 
