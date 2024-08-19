@@ -11,6 +11,29 @@ const leftArrow = document.querySelector('.left-arrow')
 const sliderNav = document.querySelector('.slider-nav')
 const slidesContainer = document.querySelector('.slider')
 
+const prevSlide = changeSlide.bind('prev')
+
+let startingX, endingX
+let moving = false
+
+const start = function (e) {
+  startingX = e.touches[0].clientX
+}
+slidesContainer.addEventListener('touchstart', start)
+
+const move = function (e) {
+  moving = true
+  endingX = e.touches[0].clientX
+}
+slidesContainer.addEventListener('touchmove', move)
+
+const end = function (e) {
+  if (!moving) return
+  if (endingX > startingX && endingX - startingX > 25) prevSlide()
+  if (endingX < startingX && startingX - endingX > 25) changeSlide()
+}
+slidesContainer.addEventListener('touchend', end)
+
 const showMenu = () => {
   menuOverlay.classList.toggle('show')
   menuIcon.classList.toggle('open')
@@ -18,22 +41,24 @@ const showMenu = () => {
 
 const switchSlide = function (e) {
   const slide = e.target.dataset.slide
-  const active = document.querySelector(`.slide[data-slide="${slide}"]`)
-  let last = active.previousElementSibling
-  if (!last) last = slidesContainer.lastElementChild
 
-  const slides = document.querySelectorAll('.slide')
-  slides.forEach(function (s) {
-    s.className = ''
-    s.classList.add('slide', 'next')
-  })
+  if (slide) {
+    const slides = document.querySelectorAll('.slide')
+    slides.forEach(function (s) {
+      s.className = ''
+      s.classList.add('slide', 'next')
+    })
 
-  active.classList.remove('next')
-  active.classList.add('active')
-  last.classList.remove('next')
-  last.classList.add('last')
+    const active = document.querySelector(`.slide[data-slide="${slide}"]`)
+    let last = active.previousElementSibling
+    if (!last) last = slidesContainer.lastElementChild
 
-  activateSliderNav(slide)
+    active.classList.remove('next')
+    active.classList.add('active')
+    last.classList.remove('next')
+    last.classList.add('last')
+    activateSliderNav(slide)
+  }
 }
 
 createSlides()
@@ -43,7 +68,7 @@ links.forEach(link => {
 })
 menuIcon.addEventListener('click', showMenu)
 rightArrow.addEventListener('click', changeSlide)
-leftArrow.addEventListener('click', changeSlide.bind('prev'))
+leftArrow.addEventListener('click', prevSlide)
 sliderNav.addEventListener('click', switchSlide)
 
 /* const slides = document.querySelectorAll('.slide')

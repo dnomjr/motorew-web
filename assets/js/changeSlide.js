@@ -1,13 +1,15 @@
 const slidesContainer = document.querySelector('.slider')
 
 export const activateSliderNav = function (slide) {
-  document.querySelector('.active-slide').classList.remove('active-slide')
+  document.querySelectorAll('.slider-nav span').forEach(function (s) {
+    s.classList.remove('active-slide')
+  })
   document
     .querySelector(`.slider-nav span[data-slide='${slide}']`)
     .classList.add('active-slide')
 }
 
-const changeSlide = function (slide) {
+const changeSlide = function (/* type */) {
   let last = document.querySelector('.last')
   let active = document.querySelector('.active')
   let next = active.nextElementSibling
@@ -17,7 +19,7 @@ const changeSlide = function (slide) {
   last.classList.remove('last')
   next.classList.remove('next')
 
-  if (this === 'prev') {
+  if (this /* || type  */=== 'prev') {
     active.classList.add('next')
     last.classList.add('active')
 
