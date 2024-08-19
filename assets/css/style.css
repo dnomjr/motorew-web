@@ -435,24 +435,38 @@ main {
   left: 0;
   height: 100%;
   width: 100%;
-  transition: transform 1s;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: end;
   row-gap: 50px;
   padding-bottom: 30px;
 }
+.reviews .slide.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reviews .slide.next {
+  transform: translateX(100%);
+}
+.reviews .slide.last {
+  transform: translateX(-100%);
+}
+
 .reviews .slider h3 {
   font-size: 24px;
   line-height: 1.5;
 }
-
 .reviews blockquote {
   width: 875px;
+  height: 275px;
   margin: 0 auto;
   font-size: 40px;
   line-height: 55px;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .reviews blockquote::before,
 .reviews blockquote::after {
@@ -532,6 +546,11 @@ main {
   height: 26px;
   transform: skew(-45deg);
   margin-right: 10px;
+  transition: all 0.3s;
+}
+.reviews .slider-nav span:hover {
+  cursor: pointer;
+  background-color: var(--color-primary);
 }
 .reviews .slider-nav span:last-child {
   margin-right: 0;
@@ -540,6 +559,7 @@ main {
   background-color: var(--color-primary);
   width: 32px;
   height: 38px;
+  margin-left: 10px;
 }
 
 /* LOCATION SECTION */

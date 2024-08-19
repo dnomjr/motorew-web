@@ -6,7 +6,7 @@ const reviews = [
   },
   {
     name: 'Peter Horváth',
-    text: 'Potreboval som rýchlu opravu, aby som sa dostal na dôležitú cestu. V tomto servise mi auto opravili za rekordný čas a to bez kompromisov na kvalite. Mechanici boli profesionáli a ochotne mi vysvetlili, čo bolo potrebné urobiť.',
+    text: 'Potreboval som rýchlu opravu, aby som sa dostal na dôležitú cestu. V tomto servise mi auto opravili za rekordný čas a to bez kompromisov na kvalite. ',
     source: 'google',
   },
   {
