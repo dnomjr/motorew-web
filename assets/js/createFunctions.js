@@ -26,7 +26,7 @@ const createSlides = function () {
       return `<div class="slide ${position}" data-slide='${i + 1}'>
                     <h3>${name}</h3>
                     <blockquote>${text}</blockquote>
-                    <span>Zdroj recenzií:&nbsp;<img src="./assets/icons/${source}-logo.svg" alt=""></span>
+                    <span>Zdroj recenzií:&nbsp;<img src="./assets/icons/${source}-logo.svg" alt="Logo ${source}"></span>
                     </div>`
     })
     .join('')

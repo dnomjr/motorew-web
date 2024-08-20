@@ -3,7 +3,7 @@
   --color-secondary: #292929;
   --color-tertiary: #434343;
   --color-border: #4d4d4d;
-  --font-section-xl: normal normal 900 clamp(40px, 11.97vw, 230px) / 0.7 Termina;
+  --font-section-xl: normal normal 900 clamp(40px, 12vw, 230px) / 0.7 Termina;
   --font-section-xs: normal normal 300 44px / 1 Termina;
   --transition: all ease-out 0.3s;
 }
@@ -50,7 +50,6 @@ section {
   text-transform: uppercase;
   text-align: center;
 }
-
 .location h2,
 .partners h2,
 .contact h2 {
@@ -58,7 +57,6 @@ section {
   text-transform: uppercase;
   text-align: center;
 }
-
 .services,
 .gallery,
 .reviews {
@@ -643,7 +641,6 @@ main {
 }
 
 /* CONTACT SECTION */
-
 .contact address {
   font-style: normal;
   text-align: center;
@@ -681,17 +678,6 @@ footer::before {
 
 /* RESPONSIVE SECTION */
 @media screen and (max-width: 1599px) {
-  /*  .services,
-  .gallery,
-  .reviews {
-    margin-bottom: 160px;
-  }
-  .location,
-  .partners,
-  .contact {
-    margin-bottom: 80px;
-  } */
-
   header .overlay div {
     padding-bottom: 80px;
   }
@@ -981,6 +967,7 @@ footer::before {
   header .overlay .contact-btn {
     margin-bottom: 0;
   }
+
   /* HERO */
   .hero {
     -webkit-mask-image: linear-gradient(
@@ -1171,10 +1158,6 @@ footer::before {
     height: 330px;
   }
 
-  /* .services,
-  .gallery {
-    margin-bottom: 100px;
-  } */
   .services ul {
     justify-content: center;
   }
@@ -1274,6 +1257,7 @@ footer::before {
     -webkit-scroll-padding-top: 75px;
     scroll-padding-top: 75px;
   }
+
   /* HEADER */
   header {
     height: 75px;
@@ -1299,12 +1283,10 @@ footer::before {
   header .menu-btn:hover:before {
     box-shadow: 0 9.16px 0 #ffc100;
   }
-
   header .overlay nav {
-    font-size: 20px;
-    line-height: 45px;
+    font-size: 6vw;
+    line-height: 11vw;
   }
-
   header .overlay .contact-btn ul {
     font-size: 10px;
     padding: 10px 17px;
