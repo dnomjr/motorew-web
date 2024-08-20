@@ -23,11 +23,11 @@ const createSlides = function () {
       if (i === reviews.length - 1) position = 'last'
       if (reviews.length === 1) position = 'active'
 
-      return `<div class="slide ${position}" data-slide='${i + 1}'>
+      return `<li class="slide ${position}" data-slide='${i + 1}'>
                     <h3>${name}</h3>
                     <blockquote>${text}</blockquote>
                     <span>Zdroj recenzií:&nbsp;<img src="./assets/icons/${source}-logo.svg" alt="Logo ${source}"></span>
-                    </div>`
+                    </li>`
     })
     .join('')
 }
@@ -35,9 +35,9 @@ const createSlides = function () {
 const createSliderNavigation = function () {
   sliderNavContainer.innerHTML = reviews
     .map((_, i) => {
-      return `<span ${i === 0 ? 'class="active-slide"' : ''} data-slide='${
+      return `<li  ${i === 0 ? 'class="active-slide"' : ''} data-slide='${
         i + 1
-      }'></span>`
+      }'><span></span></li>`
     })
     .join('')
 }

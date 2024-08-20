@@ -1,11 +1,11 @@
 const slidesContainer = document.querySelector('.slider')
 
 const swipeNav = function (slide) {
-  document.querySelectorAll('.slider-nav span').forEach(function (s) {
+  document.querySelectorAll('.slider-nav li').forEach(function (s) {
     s.classList.remove('active-slide')
   })
   document
-    .querySelector(`.slider-nav span[data-slide='${slide}']`)
+    .querySelector(`.slider-nav li[data-slide='${slide}']`)
     .classList.add('active-slide')
 }
 
