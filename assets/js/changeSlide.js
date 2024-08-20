@@ -1,6 +1,6 @@
 const slidesContainer = document.querySelector('.slider')
 
-export const activateSliderNav = function (slide) {
+const swipeNav = function (slide) {
   document.querySelectorAll('.slider-nav span').forEach(function (s) {
     s.classList.remove('active-slide')
   })
@@ -9,7 +9,7 @@ export const activateSliderNav = function (slide) {
     .classList.add('active-slide')
 }
 
-const changeSlide = function (/* type */) {
+const swipeNextSlide = function () {
   let last = document.querySelector('.last')
   let active = document.querySelector('.active')
   let next = active.nextElementSibling
@@ -19,7 +19,7 @@ const changeSlide = function (/* type */) {
   last.classList.remove('last')
   next.classList.remove('next')
 
-  if (this /* || type  */=== 'prev') {
+  if (this === 'prev') {
     active.classList.add('next')
     last.classList.add('active')
 
@@ -28,8 +28,7 @@ const changeSlide = function (/* type */) {
     next.classList.remove('next')
     next.classList.add('last')
 
-    active = document.querySelector('.active')
-    activateSliderNav(active.dataset.slide)
+    swipeNav(last.dataset.slide)
     return
   }
 
@@ -37,8 +36,29 @@ const changeSlide = function (/* type */) {
   next.classList.add('active')
   last.classList.add('next')
 
-  active = document.querySelector('.active')
-  activateSliderNav(active.dataset.slide)
+  swipeNav(next.dataset.slide)
 }
 
-export default changeSlide
+const switchSlide = function (e) {
+  const slide = e.target.dataset.slide
+
+  if (slide) {
+    const slides = document.querySelectorAll('.slide')
+    slides.forEach(function (s) {
+      s.className = ''
+      s.classList.add('slide', 'next')
+    })
+
+    const active = document.querySelector(`.slide[data-slide="${slide}"]`)
+    let last = active.previousElementSibling
+    if (!last) last = slidesContainer.lastElementChild
+
+    active.classList.remove('next')
+    active.classList.add('active')
+    last.classList.remove('next')
+    last.classList.add('last')
+    swipeNav(slide)
+  }
+}
+
+export { swipeNextSlide, switchSlide }

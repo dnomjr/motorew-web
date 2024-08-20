@@ -1,21 +1,19 @@
-import reviews from './data.js'
+import data from './data.js'
 
 const leftArrow = document.querySelector('.left-arrow')
 const rightArrow = document.querySelector('.right-arrow')
 const slidesContainer = document.querySelector('.slider')
 const sliderNavContainer = document.querySelector('.slider-nav')
 
-let slides = [...reviews]
+let reviews = [...data]
+
+if (reviews.length === 1) {
+  leftArrow.style.display = 'none'
+  rightArrow.style.display = 'none'
+  sliderNavContainer.style.display = 'none'
+}
 
 const createSlides = function () {
-  /*   console.log(slides)
-   */
-  if (reviews.length === 1) {
-    leftArrow.style.display = 'none'
-    rightArrow.style.display = 'none'
-    sliderNavContainer.style.display = 'none'
-  }
-
   slidesContainer.innerHTML = reviews
     .map((r, i) => {
       let { name, text, source } = r
@@ -23,6 +21,7 @@ const createSlides = function () {
 
       if (i === 0) position = 'active'
       if (i === reviews.length - 1) position = 'last'
+      if (reviews.length === 1) position = 'active'
 
       return `<div class="slide ${position}" data-slide='${i + 1}'>
                     <h3>${name}</h3>
@@ -31,7 +30,9 @@ const createSlides = function () {
                     </div>`
     })
     .join('')
+}
 
+const createSliderNavigation = function () {
   sliderNavContainer.innerHTML = reviews
     .map((_, i) => {
       return `<span ${i === 0 ? 'class="active-slide"' : ''} data-slide='${
@@ -41,4 +42,4 @@ const createSlides = function () {
     .join('')
 }
 
-export default createSlides
+export { createSlides, createSliderNavigation }
