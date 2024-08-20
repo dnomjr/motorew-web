@@ -3,6 +3,7 @@
 import { createSlides, createSliderNavigation } from './createFunctions.js'
 import { swipeNextSlide, switchSlide } from './changeSlide.js'
 import menuToggle from './menuToggle.js'
+import './animeSections.js'
 
 const menuIcon = document.querySelector('.menu-btn')
 const links = document.querySelectorAll('nav a')
@@ -10,6 +11,10 @@ const rightArrow = document.querySelector('.right-arrow')
 const leftArrow = document.querySelector('.left-arrow')
 const sliderOutline = document.querySelector('.slider-nav')
 const slidesContainer = document.querySelector('.slider')
+const actualYear = document.querySelector('.year')
+
+const date = new Date().getFullYear()
+actualYear.textContent = date
 
 const swipePrevSlide = swipeNextSlide.bind('prev')
 
@@ -31,7 +36,7 @@ const move = function (e) {
   endingX = e.touches[0].clientX
 }
 
-const end = function (e) {
+const end = function () {
   if (!moving) return
   if (endingX > startingX && endingX - startingX > 25) swipePrevSlide()
   if (endingX < startingX && startingX - endingX > 25) swipeNextSlide()

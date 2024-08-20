@@ -23,6 +23,14 @@ h1 {
   margin: 0;
 }
 
+section {
+  transition: transform 1s, opacity 1s;
+}
+.section-hidden {
+  opacity: 0;
+  transform: translateY(120px);
+}
+
 .container-l {
   width: 90%;
   max-width: 1640px;
