@@ -323,12 +323,16 @@ main {
   background-color: var(--color-primary);
   color: #000;
 }
-.hero::after {
-  content: '';
+.hero .after {
   display: block;
-  height: 1280px;
+  height: 0;
+  padding-bottom: 67%;
+  width: 100%;
   margin-top: -160px;
-  background: url('../images/motorbike.png') no-repeat 50% / cover;
+  background: url('../images/motorbike.png') no-repeat;
+  background-size: cover;
+  background-position: 280% 50%;
+  transition: all ease-out 0.8s;
 }
 
 /* ABOUT SECTION */
@@ -704,8 +708,7 @@ footer::before {
     width: 750px;
     padding-top: 60px;
   }
-  .hero::after {
-    height: 1100px;
+  .hero .after {
     margin-top: -130px;
   }
 
@@ -773,8 +776,7 @@ footer::before {
     font-size: 16px;
     padding: 16px 36px 15px;
   }
-  .hero::after {
-    height: 900px;
+  .hero .after {
     margin-top: -100px;
   }
 
@@ -855,9 +857,9 @@ footer::before {
     width: 525px;
     padding-top: 50px;
   }
-  .hero::after {
-    height: 800px;
+  .hero .after {
     margin-top: -80px;
+    background-position: 250%;
   }
 
   .about {
@@ -938,6 +940,11 @@ footer::before {
 }
 
 @media screen and (max-width: 991px) {
+  .container-l {
+    width: 100%;
+    padding: 0 20px;
+  }
+
   .services,
   .gallery,
   .reviews {
@@ -992,9 +999,9 @@ footer::before {
     margin-bottom: 35px;
     font-size: 14px;
   }
-  .hero::after {
-    height: 650px;
+  .hero .after {
     margin-top: -70px;
+    background-position: 230%;
   }
 
   .about {
@@ -1003,6 +1010,7 @@ footer::before {
   }
   .about p {
     margin-top: 20px;
+    width: 60%;
   }
   .about::after {
     height: 370px;
@@ -1083,6 +1091,10 @@ footer::before {
     margin-bottom: 80px;
   }
 
+  .container-l {
+    padding: 0 15px;
+  }
+
   /* HEADER */
   header .header {
     justify-content: space-between;
@@ -1134,7 +1146,7 @@ footer::before {
     padding: 15px 32px 13px;
     border-radius: 3px;
   }
-  .hero::after {
+  .hero .after {
     -webkit-mask-image: linear-gradient(
       to top,
       rgba(0, 0, 0, 0) 15%,
@@ -1148,7 +1160,7 @@ footer::before {
       rgb(0, 0, 0) 90%
     );
     margin-top: -50px;
-    height: 525px;
+    background-position: 210%;
   }
 
   .about {
@@ -1258,6 +1270,10 @@ footer::before {
     scroll-padding-top: 75px;
   }
 
+  .container-l {
+    padding: 0 10px;
+  }
+
   /* HEADER */
   header {
     height: 75px;
@@ -1322,8 +1338,7 @@ footer::before {
     font-size: 12px;
     padding: 13px 24px 11px;
   }
-  .hero::after {
-    height: 400px;
+  .hero .after {
     margin-top: -20px;
   }
   .about {
@@ -1371,10 +1386,14 @@ footer::before {
     font-size: 14px;
   }
   .reviews .slider blockquote {
-    width: 300px;
+    width: 100%;
     font-size: 20px;
     line-height: 30px;
+    padding: 0 10px;
   }
+   .reviews .slider blockquote::after {
+    right: 20px;
+   }
 
   .reviews .slider span {
     font-size: 10px;
