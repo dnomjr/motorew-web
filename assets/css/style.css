@@ -9,15 +9,29 @@
 }
 
 /* GLOBAL */
-html {
+/* html {
   -webkit-scroll-padding-top: 100px;
   scroll-padding-top: 100px;
-}
+} */
 body {
   font-family: termina, sans-serif;
   background-color: var(--color-secondary);
   color: #fff;
+  /*   padding-top: 6.25em;
+ */
 }
+
+/* .reviews,
+.gallery,
+.location,
+.contact {
+  padding-top: 7.2em;
+  margin-top: -7.2em;
+}
+.about {
+  padding-top: 13.6em;
+  margin-top: -13.6em;
+} */
 
 h1 {
   margin: 0;
@@ -70,7 +84,7 @@ section {
 .gallery,
 .reviews,
 .location {
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 /* HEADER SECTION */
@@ -337,7 +351,7 @@ main {
 
 /* ABOUT SECTION */
 .about {
-  margin-top: -500px;
+  margin-top: -26%;
   position: relative;
   z-index: 1;
   margin-bottom: 70px;
@@ -347,7 +361,7 @@ main {
 }
 .about p {
   text-align: center;
-  width: 45%;
+  width: 60%;
   margin: 0 auto;
   line-height: 2.5;
   margin-top: 40px;
@@ -415,10 +429,10 @@ main {
   content: url('../icons/gallery-item.svg');
   height: auto;
   width: 40%;
-  max-width: 760px;
+  max-width: 700px;
   position: absolute;
   z-index: 2;
-  top: 50px;
+  top: 20%;
   right: 0;
 }
 
@@ -712,9 +726,6 @@ footer::before {
     margin-top: -130px;
   }
 
-  .about {
-    margin-top: -400px;
-  }
   .about p {
     margin-top: 30px;
   }
@@ -723,9 +734,11 @@ footer::before {
   }
 
   .services,
-  .gallery {
-    margin-bottom: 180px;
+  .gallery,
+  .reviews {
+    margin-bottom: 140px;
   }
+
   .services ul li img {
     width: 300px;
     height: 238px;
@@ -741,12 +754,6 @@ footer::before {
 }
 
 @media screen and (max-width: 1399px) {
-  .services,
-  .gallery,
-  .reviews {
-    margin-bottom: 140px;
-  }
-
   header .overlay nav {
     font-size: 50px;
     line-height: 80px;
@@ -780,17 +787,10 @@ footer::before {
     margin-top: -100px;
   }
 
-  .about {
-    margin-top: -350px;
-  }
   .about::after {
     height: 450px;
   }
 
-  .services,
-  .gallery {
-    margin-bottom: 160px;
-  }
   .services ul li img {
     width: 260px;
     height: 207px;
@@ -810,7 +810,7 @@ footer::before {
     font-size: 22px;
   }
   .reviews .slider blockquote {
-    width: 800px;
+    width: 80%;
     height: 240px;
     font-size: 36px;
     line-height: 50px;
@@ -863,16 +863,13 @@ footer::before {
   }
 
   .about {
-    margin-top: -300px;
+    margin-bottom: 50px;
   }
+
   .about::after {
     height: 410px;
   }
 
-  .services,
-  .gallery {
-    margin-bottom: 140px;
-  }
   .services ul li {
     font-size: 16px;
   }
@@ -886,8 +883,7 @@ footer::before {
     width: 700px;
   }
   .gallery::after {
-    width: 50%;
-    top: 30px;
+    width: 45%;
   }
 
   .reviews .slider-wrapper {
@@ -900,7 +896,6 @@ footer::before {
     font-size: 20px;
   }
   .reviews .slider blockquote {
-    width: 700px;
     height: 220px;
     font-size: 32px;
     line-height: 45px;
@@ -1005,12 +1000,12 @@ footer::before {
   }
 
   .about {
-    margin-top: -250px;
+    margin-bottom: 35px;
     font-size: 14px;
   }
   .about p {
     margin-top: 20px;
-    width: 60%;
+    width: 70%;
   }
   .about::after {
     height: 370px;
@@ -1026,6 +1021,9 @@ footer::before {
   .gallery ul li {
     width: 600px;
   }
+  .gallery::after {
+    top: 25%;
+  }
 
   .reviews .slider-wrapper {
     height: 450px;
@@ -1038,7 +1036,6 @@ footer::before {
     font-size: 18px;
   }
   .reviews .slider blockquote {
-    width: 500px;
     font-size: 28px;
     line-height: 40px;
   }
@@ -1139,7 +1136,7 @@ footer::before {
   }
   .hero p,
   .about p {
-    width: 70%;
+    width: 80%;
   }
   .hero a {
     font-size: 14px;
@@ -1163,9 +1160,6 @@ footer::before {
     background-position: 210%;
   }
 
-  .about {
-    margin-top: -200px;
-  }
   .about::after {
     height: 330px;
   }
@@ -1186,6 +1180,9 @@ footer::before {
   .gallery ul li {
     width: 500px;
   }
+  .gallery::after {
+    display: none;
+  }
 
   .reviews .slider-wrapper {
     margin-bottom: 10px;
@@ -1197,8 +1194,7 @@ footer::before {
     font-size: 16px;
   }
   .reviews .slider blockquote {
-    width: 360px;
-    font-size: 24px;
+    font-size: 21px;
     line-height: 35px;
   }
   .reviews blockquote::before,
@@ -1265,9 +1261,20 @@ footer::before {
 }
 
 @media screen and (max-width: 575px) {
-  html {
+  /*   html {
     -webkit-scroll-padding-top: 75px;
     scroll-padding-top: 75px;
+  } */
+  .gallery,
+  .reviews,
+  .location {
+    padding-top: 8px;
+  }
+
+  .services,
+  .gallery,
+  .reviews {
+    margin-bottom: 60px;
   }
 
   .container-l {
@@ -1326,12 +1333,12 @@ footer::before {
     mask-image: none;
   }
   .hero h1 {
-    font-size: 32px;
-    width: 300px;
+    font-size: 33px;
+    width: 310px;
     padding-top: 25px;
   }
   .hero p {
-    width: 300px;
+    max-width: 400px;
     margin-bottom: 25px;
   }
   .hero a {
@@ -1341,12 +1348,9 @@ footer::before {
   .hero .after {
     margin-top: -20px;
   }
-  .about {
-    margin: -150px 0 50px 0;
-  }
+
   .about p {
     margin-top: 10px;
-    width: 80%;
     line-height: 2;
   }
   .about::after {
@@ -1364,9 +1368,6 @@ footer::before {
 
   .gallery ul li {
     width: 400px;
-  }
-  .gallery::after {
-    display: none;
   }
 
   .reviews .slider-wrapper {
@@ -1386,14 +1387,13 @@ footer::before {
     font-size: 14px;
   }
   .reviews .slider blockquote {
-    width: 100%;
+    width: 90%;
     font-size: 20px;
     line-height: 30px;
-    padding: 0 10px;
   }
-   .reviews .slider blockquote::after {
+  .reviews .slider blockquote::after {
     right: 20px;
-   }
+  }
 
   .reviews .slider span {
     font-size: 10px;
@@ -1407,9 +1407,8 @@ footer::before {
 
   .location address span {
     font-size: 14px;
-
     padding: 14px 12px;
-    width: 80%;
+
     border-radius: 20px 20px 0 0;
   }
   .location h2 {

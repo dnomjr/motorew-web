@@ -26,7 +26,9 @@ const createSlides = function () {
       return `<li class="slide ${position}" data-slide='${i + 1}'>
                     <h3>${name}</h3>
                     <blockquote>${text}</blockquote>
-                    <span>Zdroj recenzií:&nbsp;<img src="./assets/icons/${source}-logo.svg" alt="Logo ${source}"></span>
+                    <span>Zdroj recenzií:&nbsp;<img src="./assets/icons/${source}-logo.svg" alt="${
+        source[0].toUpperCase() + source.slice(1)
+      } logo"></span>
                     </li>`
     })
     .join('')
@@ -37,7 +39,7 @@ const createSliderNavigation = function () {
     .map((_, i) => {
       return `<li  ${i === 0 ? 'class="active-slide"' : ''} data-slide='${
         i + 1
-      }'><span></span></li>`
+      }'><span style="display: none">${i + 1}</span></li>`
     })
     .join('')
 }
