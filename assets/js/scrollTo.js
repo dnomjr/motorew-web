@@ -10,12 +10,6 @@ const scrollTo = (closeMenu, e) => {
   const navHeight = navbar.getBoundingClientRect().height
   let position = section.offsetTop - navHeight
 
-  /* if (
-    section.classList.contains('gallery') ||
-    section.classList.contains('reviews')
-  )
-    position = position - 10 */
-
   window.scrollTo({
     left: 0,
     top: position,

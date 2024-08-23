@@ -1,4 +1,7 @@
 const sections = document.querySelectorAll('section')
+const motorbike = document.querySelector('.after')
+const endPosition = 50
+const startPosition = parseInt(getComputedStyle(motorbike).backgroundPosition)
 
 const revealSection = function (entries, observer) {
   const [entry] = entries
@@ -20,13 +23,10 @@ sections.forEach(function (section) {
   }
 })
 
-/*   if (
-  entry.isIntersecting &&
-  entry.intersectionRatio > 0.3 &&
-  entry.target.classList.contains('about')
-) {
-  setTimeout(() => {
-    entry.target.classList.remove('section-hidden')
-  }, 500)
-  return
-} */
+const moveOnScroll = function (e) {
+  let scrollPosition = Math.floor(window.scrollY) / 2
+  if (startPosition - scrollPosition <= endPosition) return
+
+  motorbike.style.backgroundPosition = startPosition - scrollPosition + '%'
+}
+window.addEventListener('scroll', moveOnScroll)
