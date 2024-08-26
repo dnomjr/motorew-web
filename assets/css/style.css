@@ -9,34 +9,14 @@
 }
 
 /* GLOBAL */
-/* html {
-  -webkit-scroll-padding-top: 100px;
-  scroll-padding-top: 100px;
-} */
 body {
   font-family: termina, sans-serif;
   background-color: var(--color-secondary);
   color: #fff;
-  /*   padding-top: 6.25em;
- */
 }
-
-/* .reviews,
-.gallery,
-.location,
-.contact {
-  padding-top: 7.2em;
-  margin-top: -7.2em;
-}
-.about {
-  padding-top: 13.6em;
-  margin-top: -13.6em;
-} */
-
 h1 {
   margin: 0;
 }
-
 section {
   transition: transform 1s, opacity 1s;
 }
@@ -285,6 +265,12 @@ header::before {
 /* HERO SECTION */
 main {
   margin-top: 100px;
+
+  /*  height: 100vh;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: auto; */
 }
 
 .hero {
@@ -301,7 +287,11 @@ main {
     rgba(0, 0, 0, 0.05) 30%,
     rgb(0, 0, 0) 60%
   );
+
+  /*   
+  transform-style: preserve-3d; */
 }
+
 .hero h1 {
   font-weight: 300;
   font-size: 92px;
@@ -346,7 +336,9 @@ main {
   background: url('../images/motorbike.png') no-repeat;
   background-size: cover;
   background-position: 280% 50%;
-  transition: all ease-out 0.8s;
+  transition: all ease-out 0.1s;
+  /*   transform: translateZ(-1px) scale(2);
+ */
 }
 
 /* ABOUT SECTION */
@@ -374,7 +366,6 @@ main {
 }
 
 /* SERVICES SECTION */
-
 .services ul {
   margin: 0 auto;
   text-align: center;
@@ -1070,12 +1061,6 @@ footer::before {
   .partners ul li {
     flex-basis: 40%;
   }
-  /*   .partners ul li:nth-child(3) {
-    order: 4;
-  }
-  .partners ul li:nth-child(4) {
-    order: 3;
-  } */
   .partners ul li img {
     width: 236px;
     height: 74px;
@@ -1448,7 +1433,6 @@ footer::before {
 
   .contact address {
     font-size: 14px;
-    
   }
   .contact address a {
     font-size: 50px;

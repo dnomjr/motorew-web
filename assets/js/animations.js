@@ -1,7 +1,5 @@
+/* ANIMATION SECTIONS REVEAL */
 const sections = document.querySelectorAll('section')
-const motorbike = document.querySelector('.after')
-const endPosition = 50
-const startPosition = parseInt(getComputedStyle(motorbike).backgroundPosition)
 
 const revealSection = function (entries, observer) {
   const [entry] = entries
@@ -23,10 +21,20 @@ sections.forEach(function (section) {
   }
 })
 
-const moveOnScroll = function (e) {
-  let scrollPosition = Math.floor(window.scrollY) / 2
-  if (startPosition - scrollPosition <= endPosition) return
+/* ANIMATION MOTORBIKE MOVE */
+const motorbike = document.querySelector('.after')
+const startPosition = parseInt(getComputedStyle(motorbike).backgroundPosition)
+const endPosition = 50
+const scrollRange = document.querySelector('.about').getBoundingClientRect().top
+const positionRange = startPosition - endPosition
+const changePerPixel = positionRange / scrollRange + 0.03
 
-  motorbike.style.backgroundPosition = startPosition - scrollPosition + '%'
+const moveOnScroll = function () {
+  const scrollPosition = Math.floor(window.scrollY)
+
+  if (startPosition - scrollPosition * changePerPixel <= endPosition) return
+
+  motorbike.style.backgroundPosition =
+    startPosition - scrollPosition * changePerPixel + '%'
 }
 window.addEventListener('scroll', moveOnScroll)
