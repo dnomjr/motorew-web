@@ -265,12 +265,6 @@ header::before {
 /* HERO SECTION */
 main {
   margin-top: 100px;
-
-  /*  height: 100vh;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  overflow-x: hidden;
-  overflow-y: auto; */
 }
 
 .hero {
@@ -287,7 +281,14 @@ main {
     rgba(0, 0, 0, 0.05) 30%,
     rgb(0, 0, 0) 60%
   );
-  /* transform-style: preserve-3d; */
+  /*  height: 100vh;
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto; */
+
+  /* transform-style: preserve-3d;
+  height: 100%;
+  position: relative; */
 }
 
 .hero h1 {
@@ -434,7 +435,8 @@ main {
   position: relative;
   height: 570px;
   margin-bottom: 35px;
-}
+/*   touch-action: pan-y;
+ */}
 
 .reviews .slider {
   height: 100%;
