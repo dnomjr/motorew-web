@@ -435,8 +435,7 @@ main {
   position: relative;
   height: 570px;
   margin-bottom: 35px;
-/*   touch-action: pan-y;
- */}
+}
 
 .reviews .slider {
   height: 100%;
