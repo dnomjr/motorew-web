@@ -128,7 +128,7 @@ header::before {
   top: -2px;
   left: 3px;
   margin: 0 10px;
-  transition: background-image 0.3s;
+  transition: background-image 0.3s ease-out;
 }
 .contact-btn:hover::before,
 .contact-btn:active::before {
@@ -164,7 +164,7 @@ header::before {
   width: 36px;
   height: 4px;
   margin-left: auto;
-  transition: all 200ms ease-in-out;
+  transition: var(--transition);
 }
 .menu-btn:before {
   box-shadow: 0 11px 0 #fff;
@@ -233,10 +233,12 @@ header::before {
 .overlay nav li a {
   height: 100%;
   display: inline-block;
+  transition: var(--transition);
 }
 .overlay nav li a:hover {
   color: var(--color-primary);
-  text-decoration: underline;
+  border-bottom: 5px solid var(--color-primary);
+  line-height: 0.7;
 }
 
 /* HEADER - OVERLAY CONTACT BUTTON */
@@ -285,11 +287,10 @@ main {
 
 .hero h1 {
   font-weight: 300;
-  font-size: 92px;
+  font-size: 80px;
   text-transform: uppercase;
   padding-top: 65px;
   margin-bottom: 10px;
-  width: 850px;
 }
 .hero h1 strong {
   font-weight: 900;
@@ -374,7 +375,7 @@ main {
 }
 .services ul li span {
   display: inline-block;
-  width: 150px;
+  width: 200px;
 }
 
 /* GALLERY SECTION */
@@ -531,6 +532,7 @@ main {
   width: 120px;
   height: 60px;
   fill: #fff;
+  transition: var(--transition);
 }
 .reviews .arrow:hover svg,
 .reviews .arrow:active svg {
@@ -595,7 +597,7 @@ main {
   border: 1px solid var(--color-border);
   border-bottom: none;
   border-radius: 30px 30px 0 0;
-  padding: 18px 50px;
+  padding: 18px 44px;
   background-color: #46464625;
 }
 .location address div {
@@ -654,6 +656,7 @@ main {
   font-size: 100px;
   font-weight: 900;
   line-height: 1;
+  transition: var(--transition);
 }
 .contact address a:hover,
 .contact address a:active {
@@ -697,8 +700,7 @@ footer::before {
   }
 
   .hero h1 {
-    font-size: 80px;
-    width: 750px;
+    font-size: 72px;
     padding-top: 60px;
   }
   .hero .after {
@@ -756,8 +758,7 @@ footer::before {
     top: -2px;
   }
   .hero h1 {
-    font-size: 68px;
-    width: 625px;
+    font-size: 60px;
     padding-top: 55px;
   }
   .hero p {
@@ -834,8 +835,7 @@ footer::before {
     top: 1.5px;
   }
   .hero h1 {
-    font-size: 56px;
-    width: 525px;
+    font-size: 52px;
     padding-top: 50px;
   }
   .hero .after {
@@ -967,8 +967,7 @@ footer::before {
     );
   }
   .hero h1 {
-    font-size: 44px;
-    width: 400px;
+    font-size: 40px;
     padding-top: 45px;
   }
   .hero p {
@@ -1114,7 +1113,6 @@ footer::before {
   }
   .hero h1 {
     font-size: 52px;
-    width: 475px;
     padding-top: 40px;
   }
   .hero p,
@@ -1151,7 +1149,7 @@ footer::before {
     justify-content: center;
   }
   .services ul li span {
-    width: 125px;
+    width: 160px;
     font-size: 14px;
   }
   .services ul li img {
@@ -1204,7 +1202,7 @@ footer::before {
   }
   .location address span {
     font-size: 16px;
-    padding: 14px 20px;
+    padding: 10px 20px;
     border-radius: 20px 20px 0 0;
   }
   .location h2 {
@@ -1292,9 +1290,6 @@ footer::before {
   header .menu-btn:hover:before {
     box-shadow: 0 9.16px 0 #ffc100;
   }
-  header .overlay div {
-   padding-bottom: 80px;
-  }
   header .overlay nav {
     font-size: 6vw;
     line-height: 11vw;
@@ -1322,8 +1317,7 @@ footer::before {
     mask-image: none;
   }
   .hero h1 {
-    font-size: 33px;
-    width: 310px;
+    font-size: 9vw;
     padding-top: 25px;
   }
   .hero p {
@@ -1389,7 +1383,7 @@ footer::before {
 
   .location address span {
     font-size: 14px;
-    padding: 14px 12px;
+    padding: 8px 16px;
     margin: 0 10px;
     border-radius: 20px 20px 0 0;
   }
