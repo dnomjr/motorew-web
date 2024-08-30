@@ -1292,6 +1292,9 @@ footer::before {
   header .menu-btn:hover:before {
     box-shadow: 0 9.16px 0 #ffc100;
   }
+  header .overlay div {
+   padding-bottom: 80px;
+  }
   header .overlay nav {
     font-size: 6vw;
     line-height: 11vw;
