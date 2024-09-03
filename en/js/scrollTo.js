@@ -14,8 +14,10 @@ const scrollTo = (closeMenu, e) => {
     left: 0,
     top: position,
   })
-  if (e.target.closest('.hero').className === 'hero') return
+  console.log(e.currentTarget)
 
+    if (e.target.classList.contains('cta-btn')) return
+  
   closeMenu()
 }
 
