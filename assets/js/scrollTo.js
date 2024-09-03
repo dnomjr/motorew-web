@@ -10,6 +10,7 @@ const scrollTo = (closeMenu, e) => {
   const navHeight = navbar.getBoundingClientRect().height
   let position = section.offsetTop - navHeight
 
+  window.location.hash = id
   window.scrollTo({
     left: 0,
     top: position,
