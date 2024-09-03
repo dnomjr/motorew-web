@@ -15,6 +15,7 @@ const scrollTo = (closeMenu, e) => {
     top: position,
   })
   if (e.target.closest('.hero').className === 'hero') return
+
   closeMenu()
 }
 

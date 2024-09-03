@@ -152,7 +152,6 @@ header::before {
 .header .lang {
   font-size: 28px;
   margin: 4px 40px 0 auto;
-  text-transform: uppercase;
   align-self: center;
   transition: var(--transition);
 }
@@ -1398,7 +1397,7 @@ footer::before {
     font-size: 14px;
   }
   .reviews .slider blockquote {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 30px;
   }
   .reviews .slider blockquote::after {
