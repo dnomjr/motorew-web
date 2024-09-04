@@ -1,5 +1,8 @@
 'use strict'
 
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
 import { createSlides, createSliderNavigation } from './createFunctions.js'
 import { swipeNextSlide, switchSlide } from './changeSlide.js'
 import { start, move, end } from './touchSwipe.js'
