@@ -19,7 +19,7 @@ const swipeNextSlide = function () {
   last.classList.remove('last')
   next.classList.remove('next')
 
-  if (this.toString() === 'prev') {
+  if (this === 'prev') {
     active.classList.add('next')
     last.classList.add('active')
 

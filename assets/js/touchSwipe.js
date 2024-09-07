@@ -17,12 +17,13 @@ const start = function (e) {
   startingX = e.touches[0].clientX
   startingY = e.touches[0].clientY
 
-  window.addEventListener('scroll', scrollFunc)
+  /*   window.addEventListener('scroll', scrollFunc)
+   */
 }
 
 const move = function (e) {
   moving = true
-
+  slider.style.touchAction = 'pan-y'
   endingX = e.touches[0].clientX
   endingY = e.touches[0].clientY
   console.log(endingY, startingY, endingX, startingX)
@@ -30,10 +31,10 @@ const move = function (e) {
 
 const end = function () {
   if (!moving) return
-  if (scrollDetect) {
+  /*   if (scrollDetect) {
     scrollDetect = false
     return window.removeEventListener('scroll', scrollFunc)
-  }
+  } */
 
   if (endingX > startingX && endingX - startingX > 25) swipePrevSlide()
   if (endingX < startingX && startingX - endingX > 25) swipeNextSlide()
