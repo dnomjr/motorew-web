@@ -7,6 +7,7 @@ import scrollTo from './scrollTo.js'
 import showMenu from './toggleMenu.js'
 import './animations.js'
 
+
 const menuIcon = document.querySelector('.menu-btn')
 const links = document.querySelectorAll('nav a')
 const rightArrow = document.querySelector('.right-arrow')
