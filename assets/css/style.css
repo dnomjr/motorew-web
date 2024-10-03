@@ -1090,7 +1090,6 @@ footer::before {
   .partners ul li {
     flex-basis: 40%;
   }
-
   .partners::after {
     width: 20px;
   }
