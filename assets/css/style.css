@@ -686,9 +686,11 @@ main {
   text-transform: lowercase;
   line-height: 1.2;
 }
-.contact address a:hover,
-.contact address a:active {
-  color: var(--color-primary);
+@media (hover: hover) {
+  .contact address a:hover,
+  .contact address a:active {
+    color: var(--color-primary);
+  }
 }
 
 /* FOOTER */
