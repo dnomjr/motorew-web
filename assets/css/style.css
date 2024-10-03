@@ -683,6 +683,8 @@ main {
   font-weight: 900;
   line-height: 1;
   transition: var(--transition);
+  text-transform: lowercase;
+  line-height: 1.2;
 }
 .contact address a:hover,
 .contact address a:active {
@@ -1075,6 +1077,7 @@ footer::before {
 
   .contact address a {
     font-size: 50px;
+    line-height: 1.1;
   }
 
   .partners ul {
