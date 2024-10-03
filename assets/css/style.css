@@ -440,14 +440,12 @@ main {
   z-index: 2;
   top: 8%;
   right: 0;
-  
 }
 
 /* REVIEWS SECTION */
 .reviews {
   text-align: center;
   position: relative;
-  
 }
 .reviews .slider-wrapper {
   position: relative;
@@ -762,6 +760,10 @@ footer::before {
     height: 90px;
   }
 
+  .contact address a {
+    font-size: 90px;
+  }
+
   .location address div {
     height: 650px;
   }
@@ -836,6 +838,10 @@ footer::before {
   .partners ul li img {
     width: 250px;
     height: 80px;
+  }
+
+  .contact address a {
+    font-size: 75px;
   }
 }
 @media screen and (max-width: 1199px) {
@@ -925,7 +931,7 @@ footer::before {
   }
 
   .contact address a {
-    font-size: 80px;
+    font-size: 65px;
   }
 
   .partners ul li img {
@@ -1068,7 +1074,7 @@ footer::before {
   }
 
   .contact address a {
-    font-size: 60px;
+    font-size: 50px;
   }
 
   .partners ul {
@@ -1260,7 +1266,7 @@ footer::before {
     font-size: 18px;
   }
   .contact address a {
-    font-size: 55px;
+    font-size: 6.5vw;
   }
 
   footer {
@@ -1453,9 +1459,6 @@ footer::before {
 
   .contact address {
     font-size: clamp(12px, 3.2vw, 18px);
-  }
-  .contact address a {
-    font-size: 9vw;
   }
 
   footer {
