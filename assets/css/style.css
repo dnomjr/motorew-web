@@ -414,22 +414,26 @@ main {
 }
 
 .gallery {
-  margin-bottom: 175px;
+  padding-bottom: 160px;
+  margin-bottom: 0;
   position: relative;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .gallery ul {
-  white-space: nowrap;
-  overflow: hidden;
+  display: inline-block;
+  animation: 60s slide infinite linear;
 }
 .gallery ul li {
   display: inline-block;
   margin-left: -5px;
-  animation: 10s slide infinite linear;
+  height: 640px;
+  width: 960px;
 }
 .gallery img {
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .gallery::after {
   content: url('../icons/gallery-item.svg');
@@ -745,7 +749,6 @@ footer::before {
   }
 
   .services,
-  .gallery,
   .reviews {
     margin-bottom: 140px;
   }
@@ -755,7 +758,12 @@ footer::before {
     height: 238px;
   }
 
+  .gallery {
+    padding-bottom: 140px;
+  }
+
   .gallery ul li {
+    height: 530px;
     width: 800px;
   }
 
@@ -815,10 +823,6 @@ footer::before {
     height: 207px;
   }
 
-  .gallery ul li {
-    width: 800px;
-  }
-
   .reviews .slider-wrapper {
     height: 550px;
   }
@@ -850,7 +854,6 @@ footer::before {
 }
 @media screen and (max-width: 1199px) {
   .services,
-  .gallery,
   .reviews {
     margin-bottom: 120px;
   }
@@ -898,8 +901,12 @@ footer::before {
     margin-bottom: 30px;
   }
 
+  .gallery {
+    padding-bottom: 120px;
+  }
   .gallery ul li {
-    width: 700px;
+    width: 650px;
+    height: 435px;
   }
   .gallery::after {
     width: 45%;
@@ -960,7 +967,6 @@ footer::before {
   }
 
   .services,
-  .gallery,
   .reviews {
     margin-bottom: 100px;
   }
@@ -1036,11 +1042,15 @@ footer::before {
     flex-basis: 50%;
   }
 
+  .gallery {
+    padding-bottom: 100px;
+  }
   .gallery ul li {
     width: 600px;
+    height: 400px;
   }
   .gallery::after {
-    top: 25%;
+    top: 7%;
   }
 
   .reviews .slider-wrapper {
@@ -1097,7 +1107,6 @@ footer::before {
 
 @media screen and (max-width: 767px) {
   .services,
-  .gallery,
   .reviews {
     margin-bottom: 80px;
   }
@@ -1196,8 +1205,12 @@ footer::before {
     margin-bottom: 20px;
   }
 
+  .gallery {
+    padding-bottom: 80px;
+  }
   .gallery ul li {
     width: 500px;
+    height: 330px;
   }
   .gallery::after {
     display: none;
@@ -1291,7 +1304,6 @@ footer::before {
   }
 
   .services,
-  .gallery,
   .reviews {
     margin-bottom: 60px;
   }
@@ -1392,8 +1404,12 @@ footer::before {
     margin-bottom: 15px;
   }
 
+  .gallery {
+    padding-bottom: 60px;
+  }
   .gallery ul li {
     width: 400px;
+    height: 270px;
   }
 
   .reviews .slider-wrapper {
